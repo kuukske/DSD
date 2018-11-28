@@ -1,0 +1,8 @@
+#Ignore the simulation folder for commiting
+simulation/
+
+#Ignore all .DO files
+*.do
+
+#Ignore output_files for commiting
+output_files/
