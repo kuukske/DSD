@@ -47,20 +47,20 @@ END counter;
 ARCHITECTURE counter_architecture OF counter IS
 signal count : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000000";
 
-
 BEGIN
-process(clk, clear, nrst)
+q <= count;
+
+process(clk, nrst)
 	begin
-		IF(nrst = '1') THEN
+		IF nrst = '1' THEN
 			IF(rising_edge(clk)) and (clear = '0') THEN			--if NRST, rising edge clk and not clearing, count +1
 				count <= count + 1;
 			ELSIF (rising_edge(clk)) and (clear = '1') THEN		--else if NRST, rising edge clk and clear, count <= "0000000"
 				count <= "00000000";
 			END IF;
 		ELSE
-			count <= "00000000";											--if /NRST, clear counter output, no counter operation
+			count <= "00000000";			--if /NRST, clear counter output, no counter operation
 		END IF;
-			q <= count;
 			
  	end process;
 

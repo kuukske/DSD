@@ -394,7 +394,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 528 360 672 472)
+	(rect 536 360 680 472)
 	(text "counter" (rect 5 0 41 12)(font "Arial" ))
 	(text "inst1" (rect 8 96 31 108)(font "Arial" ))
 	(port
@@ -584,27 +584,6 @@ refer to the applicable agreement for further details.
 	(pt 480 488)
 )
 (connector
-	(pt 712 432)
-	(pt 672 432)
-)
-(connector
-	(text "cntr_clr" (rect 696 384 713 419)(font "Intel Clear" )(vertical))
-	(pt 712 360)
-	(pt 712 432)
-)
-(connector
-	(pt 168 504)
-	(pt 584 504)
-)
-(connector
-	(pt 584 504)
-	(pt 872 504)
-)
-(connector
-	(pt 584 472)
-	(pt 584 504)
-)
-(connector
 	(pt 448 288)
 	(pt 448 352)
 	(bus)
@@ -615,36 +594,57 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 600 352)
-	(pt 600 360)
+	(text "cntr_clr" (rect 696 384 713 419)(font "Intel Clear" )(vertical))
+	(pt 712 360)
+	(pt 712 432)
+)
+(connector
+	(pt 576 488)
+	(pt 576 472)
+)
+(connector
+	(pt 592 504)
+	(pt 592 472)
+)
+(connector
+	(pt 608 352)
+	(pt 608 360)
 	(bus)
 )
 (connector
-	(pt 480 488)
-	(pt 568 488)
+	(pt 712 432)
+	(pt 680 432)
 )
 (connector
-	(pt 568 488)
+	(pt 480 488)
+	(pt 576 488)
+)
+(connector
+	(pt 576 488)
 	(pt 888 488)
 )
 (connector
-	(pt 568 456)
-	(pt 568 472)
+	(pt 168 504)
+	(pt 592 504)
 )
 (connector
-	(pt 568 472)
-	(pt 568 488)
+	(pt 592 504)
+	(pt 872 504)
 )
 (connector
 	(text "count_vector[7..0]" (rect 458 336 542 353)(font "Intel Clear" ))
-	(pt 600 352)
 	(pt 448 352)
+	(pt 600 352)
+	(bus)
+)
+(connector
+	(pt 600 352)
+	(pt 608 352)
 	(bus)
 )
 (junction (pt 480 208))
 (junction (pt 296 -56))
 (junction (pt 480 488))
-(junction (pt 584 504))
+(junction (pt 576 488))
+(junction (pt 592 504))
 (junction (pt 600 352))
-(junction (pt 568 488))
-(junction (pt 568 472))

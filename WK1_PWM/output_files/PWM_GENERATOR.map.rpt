@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PWM_GENERATOR
-Wed Nov 28 10:19:09 2018
+Wed Nov 28 15:12:57 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Nov 28 10:19:09 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed Nov 28 15:12:57 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; PWM_GENERATOR                               ;
 ; Top-level Entity Name           ; PWM_GENERATOR                               ;
@@ -293,7 +293,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Nov 28 10:18:47 2018
+    Info: Processing started: Wed Nov 28 15:12:35 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PWM_GENERATOR -c PWM_GENERATOR
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -322,7 +322,8 @@ Info (10041): Inferred latch for "next_state[1]" at PWM_Controller.vhd(64) File:
 Info (10041): Inferred latch for "next_state[2]" at PWM_Controller.vhd(64) File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 64
 Info (12128): Elaborating entity "compare_period" for hierarchy "compare_period:inst10"
 Info (12128): Elaborating entity "counter" for hierarchy "counter:inst1"
-Warning (10492): VHDL Process Statement warning at counter.vhd(63): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/counter.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at counter.vhd(56): signal "clear" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/counter.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at counter.vhd(58): signal "clear" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/counter.vhd Line: 58
 Info (12128): Elaborating entity "load_1" for hierarchy "load_1:inst6"
 Info (12128): Elaborating entity "compare_PWM" for hierarchy "compare_PWM:inst8"
 Warning (13012): Latch PWM_Controller:inst12|next_state[1] has unsafe behavior File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 64
@@ -338,10 +339,10 @@ Info (21057): Implemented 65 device resources after synthesis - the final resour
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 3 output pins
     Info (21061): Implemented 50 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 720 megabytes
-    Info: Processing ended: Wed Nov 28 10:19:09 2018
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 718 megabytes
+    Info: Processing ended: Wed Nov 28 15:12:57 2018
     Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:35
+    Info: Total CPU time (on all processors): 00:00:33
 
 

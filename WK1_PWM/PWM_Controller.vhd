@@ -92,7 +92,7 @@ next_state_decoder: PROCESS(Init, Avail, Equal, current_state)
 				
 			WHEN "110" =>
 				IF (Equal = '1') THEN
-					next_state <= "111";
+					next_state <= "110";
 				END IF;
 					
 			WHEN "111" =>
@@ -127,7 +127,7 @@ output_decoder: PROCESS(current_state, Init, Avail, Equal)
 			WHEN "000" =>		--S0 | cleare all, reset state
 				Rdy 				<=		'0'	;
 				Valid				<=		'0'	;
-				Load_1			<=		'0'	;
+				--Load_1			<=		'0'	;
 				Load_2			<=		'0'	;
 				Clear_cntr		<=		'0'	;
 				tri_state_out	<=		'0'	;
@@ -157,7 +157,7 @@ output_decoder: PROCESS(current_state, Init, Avail, Equal)
 				Rdy 				<=		'0'	;	--clear ready to end handshake
 				Valid				<=		'0'	;
 				Load_1			<=		'0'	;
-				Load_2			<=		'0'	;
+				--Load_2			<=		'0'	;
 				Clear_cntr		<=		'1'	;	--clear counter (no count operation)
 				tri_state_out	<=		'0'	;
 				IF (Avail = '1') THEN			--Mealy transition for Load_2
@@ -187,21 +187,22 @@ output_decoder: PROCESS(current_state, Init, Avail, Equal)
 				Valid				<=		'1'	;	--enable valid output 
 				Load_1			<=		'0'	;
 				Load_2			<=		'0'	;
-				Clear_cntr		<=		'0'	;	--start counting
+				--Clear_cntr		<=		'0'	;	--start counting
 				tri_state_out	<=		'1'	;	--enable output tri-state buffer
 				IF (Equal = '1') THEN			--Mealy transistion for Clear_cntr
 					Clear_cntr <= '1';
 				ELSE
 					Clear_cntr <= '0';
 				END IF;
-				
-			WHEN "111" =>		--S7
-				Rdy 				<=		'0'	;	
-				Valid				<=		'1'	;	--keep valid output enabled
-				Load_1			<=		'0'	;
-				Load_2			<=		'0'	;
-				Clear_cntr		<=		'1'	;	--clear counter, reset for next count cycle
-				tri_state_out	<=		'1'	;	--keep tri-state buffer output enabled
+			
+			
+--			WHEN "111" =>		--S7
+--				Rdy 				<=		'0'	;	
+--				Valid				<=		'1'	;	--keep valid output enabled
+--				Load_1			<=		'0'	;
+--				Load_2			<=		'0'	;
+--				Clear_cntr		<=		'1'	;	--clear counter, reset for next count cycle
+--				tri_state_out	<=		'1'	;	--keep tri-state buffer output enabled
 				
 			WHEN OTHERS =>
 				Rdy 				<=		'X'	;

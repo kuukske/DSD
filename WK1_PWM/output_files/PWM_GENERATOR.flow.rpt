@@ -1,5 +1,5 @@
 Flow report for PWM_GENERATOR
-Wed Nov 28 10:19:09 2018
+Wed Nov 28 15:14:39 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,25 +40,25 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Nov 28 10:19:09 2018       ;
+; Flow Status                     ; Successful - Wed Nov 28 15:14:39 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; PWM_GENERATOR                               ;
 ; Top-level Entity Name           ; PWM_GENERATOR                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CGXFC7C7F23C8                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
+; Logic utilization (in ALMs)     ; 19 / 56,480 ( < 1 % )                       ;
 ; Total registers                 ; 27                                          ;
-; Total pins                      ; 15                                          ;
+; Total pins                      ; 15 / 268 ( 6 % )                            ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
+; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 156 ( 0 % )                             ;
+; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                               ;
+; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                               ;
+; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                               ;
+; Total HSSI PMA TX Serializers   ; 0 / 6 ( 0 % )                               ;
+; Total PLLs                      ; 0 / 13 ( 0 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/28/2018 10:18:50 ;
+; Start date & time ; 11/28/2018 15:12:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PWM_GENERATOR       ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 121373820420.154339673001664           ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 121373820420.154341435703092           ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -98,8 +98,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 720 MB              ; 00:00:35                           ;
-; Total                ; 00:00:22     ; --                      ; --                  ; 00:00:35                           ;
+; Analysis & Synthesis ; 00:00:21     ; 1.0                     ; 718 MB              ; 00:00:33                           ;
+; Fitter               ; 00:01:03     ; 1.0                     ; 2275 MB             ; 00:01:23                           ;
+; Assembler            ; 00:00:15     ; 1.0                     ; 692 MB              ; 00:00:14                           ;
+; Timing Analyzer      ; 00:00:14     ; 1.0                     ; 1027 MB             ; 00:00:13                           ;
+; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 602 MB              ; 00:00:04                           ;
+; Total                ; 00:01:57     ; --                      ; --                  ; 00:02:27                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -109,6 +113,10 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +----------------------+------------------+-----------+------------+----------------+
 ; Analysis & Synthesis ; BKPC             ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter               ; BKPC             ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler            ; BKPC             ; Windows 7 ; 6.1        ; x86_64         ;
+; Timing Analyzer      ; BKPC             ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer   ; BKPC             ; Windows 7 ; 6.1        ; x86_64         ;
 +----------------------+------------------+-----------+------------+----------------+
 
 
@@ -116,6 +124,10 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off PWM_GENERATOR -c PWM_GENERATOR
+quartus_fit --read_settings_files=off --write_settings_files=off PWM_GENERATOR -c PWM_GENERATOR
+quartus_asm --read_settings_files=off --write_settings_files=off PWM_GENERATOR -c PWM_GENERATOR
+quartus_sta PWM_GENERATOR -c PWM_GENERATOR
+quartus_eda --read_settings_files=off --write_settings_files=off PWM_GENERATOR -c PWM_GENERATOR
 
 
 
