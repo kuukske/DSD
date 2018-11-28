@@ -1,0 +1,347 @@
+Analysis & Synthesis report for PWM_GENERATOR
+Wed Nov 28 00:48:37 2018
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Nov 28 00:48:37 2018       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; PWM_GENERATOR                               ;
+; Top-level Entity Name           ; PWM_GENERATOR                               ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 27                                          ;
+; Total pins                      ; 15                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; PWM_GENERATOR      ; PWM_GENERATOR      ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------+---------+
+; PWM_GENERATOR.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Bram Kuijk/Documents/DSD/PWM_GENERATOR.bdf  ;         ;
+; load_1.vhd                       ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/load_1.vhd         ;         ;
+; counter.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/counter.vhd        ;         ;
+; compare_PWM.vhd                  ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd    ;         ;
+; compare_period.vhd               ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd ;         ;
+; PWM_Controller.vhd               ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 21        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 31        ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 6         ;
+;     -- 5 input functions                    ; 4         ;
+;     -- 4 input functions                    ; 4         ;
+;     -- <=3 input functions                  ; 17        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 27        ;
+;                                             ;           ;
+; I/O pins                                    ; 15        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 27        ;
+; Total fan-out                               ; 213       ;
+; Average fan-out                             ; 2.42      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                        ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name    ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+----------------+--------------+
+; |PWM_GENERATOR             ; 31 (0)              ; 27 (0)                    ; 0                 ; 0          ; 15   ; 0            ; |PWM_GENERATOR                       ; PWM_GENERATOR  ; work         ;
+;    |PWM_Controller:inst12| ; 11 (11)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|PWM_Controller:inst12 ; PWM_Controller ; work         ;
+;    |compare_PWM:inst8|     ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|compare_PWM:inst8     ; compare_PWM    ; work         ;
+;    |compare_period:inst10| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|compare_period:inst10 ; compare_period ; work         ;
+;    |counter:inst2|         ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|counter:inst2         ; counter        ; work         ;
+;    |load_1:inst6|          ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|load_1:inst6          ; load_1         ; work         ;
+;    |load_1:inst|           ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|load_1:inst           ; load_1         ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                      ;
++----------------------------------------------------+----------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal        ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------+------------------------+
+; PWM_Controller:inst12|next_state[1]                ; PWM_Controller:inst12|Mux9 ; yes                    ;
+; PWM_Controller:inst12|next_state[0]                ; PWM_Controller:inst12|Mux9 ; yes                    ;
+; PWM_Controller:inst12|next_state[2]                ; PWM_Controller:inst12|Mux9 ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                            ;                        ;
++----------------------------------------------------+----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 27    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 27                          ;
+;     CLR               ; 3                           ;
+;     ENA               ; 16                          ;
+;     SCLR              ; 8                           ;
+; arriav_io_obuf        ; 1                           ;
+; arriav_lcell_comb     ; 31                          ;
+;     arith             ; 8                           ;
+;         1 data inputs ; 8                           ;
+;     normal            ; 23                          ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 4                           ;
+;         5 data inputs ; 4                           ;
+;         6 data inputs ; 6                           ;
+; boundary_port         ; 15                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.54                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Nov 28 00:48:16 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PWM_GENERATOR -c PWM_GENERATOR
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file pwm_generator.bdf
+    Info (12023): Found entity 1: PWM_GENERATOR
+Info (12021): Found 2 design units, including 1 entities, in source file load_1.vhd
+    Info (12022): Found design unit 1: load_1-load_1_architecture File: C:/Users/Bram Kuijk/Documents/DSD/load_1.vhd Line: 40
+    Info (12023): Found entity 1: load_1 File: C:/Users/Bram Kuijk/Documents/DSD/load_1.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
+    Info (12022): Found design unit 1: counter-counter_architecture File: C:/Users/Bram Kuijk/Documents/DSD/counter.vhd Line: 46
+    Info (12023): Found entity 1: counter File: C:/Users/Bram Kuijk/Documents/DSD/counter.vhd Line: 31
+Info (12021): Found 2 design units, including 1 entities, in source file compare_pwm.vhd
+    Info (12022): Found design unit 1: compare_PWM-compare_PWM_architecture File: C:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd Line: 44
+    Info (12023): Found entity 1: compare_PWM File: C:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file compare_period.vhd
+    Info (12022): Found design unit 1: compare_period-compare_period_architecture File: C:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd Line: 44
+    Info (12023): Found entity 1: compare_period File: C:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file pwm_controller.vhd
+    Info (12022): Found design unit 1: PWM_Controller-PWM_Controller_architecture File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 55
+    Info (12023): Found entity 1: PWM_Controller File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 32
+Info (12127): Elaborating entity "PWM_GENERATOR" for the top level hierarchy
+Info (12128): Elaborating entity "PWM_Controller" for hierarchy "PWM_Controller:inst12"
+Warning (10631): VHDL Process Statement warning at PWM_Controller.vhd(64): inferring latch(es) for signal or variable "next_state", which holds its previous value in one or more paths through the process File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
+Info (10041): Inferred latch for "next_state[0]" at PWM_Controller.vhd(64) File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
+Info (10041): Inferred latch for "next_state[1]" at PWM_Controller.vhd(64) File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
+Info (10041): Inferred latch for "next_state[2]" at PWM_Controller.vhd(64) File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
+Info (12128): Elaborating entity "compare_period" for hierarchy "compare_period:inst10"
+Info (12128): Elaborating entity "counter" for hierarchy "counter:inst2"
+Warning (10492): VHDL Process Statement warning at counter.vhd(58): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bram Kuijk/Documents/DSD/counter.vhd Line: 58
+Info (12128): Elaborating entity "load_1" for hierarchy "load_1:inst6"
+Info (12128): Elaborating entity "compare_PWM" for hierarchy "compare_PWM:inst8"
+Warning (13012): Latch PWM_Controller:inst12|next_state[1] has unsafe behavior File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PWM_Controller:inst12|current_state[2] File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 112
+Warning (13012): Latch PWM_Controller:inst12|next_state[0] has unsafe behavior File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PWM_Controller:inst12|current_state[0] File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 112
+Warning (13012): Latch PWM_Controller:inst12|next_state[2] has unsafe behavior File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PWM_Controller:inst12|current_state[2] File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 112
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 50 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 720 megabytes
+    Info: Processing ended: Wed Nov 28 00:48:37 2018
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:34
+
+

@@ -1,0 +1,197 @@
+|PWM_GENERATOR
+RDY <= PWM_Controller:inst12.Rdy
+CLK => PWM_Controller:inst12.CLK
+CLK => counter:inst2.clk
+CLK => load_1:inst6.clk
+CLK => load_1:inst.clk
+NRST => PWM_Controller:inst12.NRST
+Init => PWM_Controller:inst12.Init
+Avail => PWM_Controller:inst12.Avail
+D_in[0] => load_1:inst6.d[0]
+D_in[0] => load_1:inst.d[0]
+D_in[1] => load_1:inst6.d[1]
+D_in[1] => load_1:inst.d[1]
+D_in[2] => load_1:inst6.d[2]
+D_in[2] => load_1:inst.d[2]
+D_in[3] => load_1:inst6.d[3]
+D_in[3] => load_1:inst.d[3]
+D_in[4] => load_1:inst6.d[4]
+D_in[4] => load_1:inst.d[4]
+D_in[5] => load_1:inst6.d[5]
+D_in[5] => load_1:inst.d[5]
+D_in[6] => load_1:inst6.d[6]
+D_in[6] => load_1:inst.d[6]
+D_in[7] => load_1:inst6.d[7]
+D_in[7] => load_1:inst.d[7]
+VALID <= PWM_Controller:inst12.Valid
+PWM <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PWM_GENERATOR|PWM_Controller:inst12
+CLK => current_state[0].CLK
+CLK => current_state[1].CLK
+CLK => current_state[2].CLK
+NRST => current_state[0].ACLR
+NRST => current_state[1].ACLR
+NRST => current_state[2].ACLR
+Init => output_decoder.IN0
+Avail => output_decoder.IN1
+Avail => Mux5.IN7
+Avail => Mux9.IN6
+Avail => Mux9.IN4
+Avail => Mux9.IN5
+Equal => Mux6.IN7
+Equal => Mux9.IN7
+Rdy <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Valid <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Load_1 <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Load_2 <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Clear_cntr <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+tri_state_out <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PWM_GENERATOR|compare_period:inst10
+cntr[0] => LessThan0.IN8
+cntr[1] => LessThan0.IN7
+cntr[2] => LessThan0.IN6
+cntr[3] => LessThan0.IN5
+cntr[4] => LessThan0.IN4
+cntr[5] => LessThan0.IN3
+cntr[6] => LessThan0.IN2
+cntr[7] => LessThan0.IN1
+sw_point[0] => LessThan0.IN16
+sw_point[1] => LessThan0.IN15
+sw_point[2] => LessThan0.IN14
+sw_point[3] => LessThan0.IN13
+sw_point[4] => LessThan0.IN12
+sw_point[5] => LessThan0.IN11
+sw_point[6] => LessThan0.IN10
+sw_point[7] => LessThan0.IN9
+equal <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PWM_GENERATOR|counter:inst2
+clear => count[0].OUTPUTSELECT
+clear => count[1].OUTPUTSELECT
+clear => count[2].OUTPUTSELECT
+clear => count[3].OUTPUTSELECT
+clear => count[4].OUTPUTSELECT
+clear => count[5].OUTPUTSELECT
+clear => count[6].OUTPUTSELECT
+clear => count[7].OUTPUTSELECT
+clear => count[0].OUTPUTSELECT
+clear => count[1].OUTPUTSELECT
+clear => count[2].OUTPUTSELECT
+clear => count[3].OUTPUTSELECT
+clear => count[4].OUTPUTSELECT
+clear => count[5].OUTPUTSELECT
+clear => count[6].OUTPUTSELECT
+clear => count[7].OUTPUTSELECT
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+q[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= count[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= count[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= count[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= count[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PWM_GENERATOR|load_1:inst6
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+d[2] => q[2]~reg0.DATAIN
+d[3] => q[3]~reg0.DATAIN
+d[4] => q[4]~reg0.DATAIN
+d[5] => q[5]~reg0.DATAIN
+d[6] => q[6]~reg0.DATAIN
+d[7] => q[7]~reg0.DATAIN
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+clk => q[4]~reg0.CLK
+clk => q[5]~reg0.CLK
+clk => q[6]~reg0.CLK
+clk => q[7]~reg0.CLK
+ld => q[0]~reg0.ENA
+ld => q[1]~reg0.ENA
+ld => q[2]~reg0.ENA
+ld => q[3]~reg0.ENA
+ld => q[4]~reg0.ENA
+ld => q[5]~reg0.ENA
+ld => q[6]~reg0.ENA
+ld => q[7]~reg0.ENA
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PWM_GENERATOR|compare_PWM:inst8
+sw_point[0] => LessThan0.IN8
+sw_point[1] => LessThan0.IN7
+sw_point[2] => LessThan0.IN6
+sw_point[3] => LessThan0.IN5
+sw_point[4] => LessThan0.IN4
+sw_point[5] => LessThan0.IN3
+sw_point[6] => LessThan0.IN2
+sw_point[7] => LessThan0.IN1
+cntr[0] => LessThan0.IN16
+cntr[1] => LessThan0.IN15
+cntr[2] => LessThan0.IN14
+cntr[3] => LessThan0.IN13
+cntr[4] => LessThan0.IN12
+cntr[5] => LessThan0.IN11
+cntr[6] => LessThan0.IN10
+cntr[7] => LessThan0.IN9
+PWM <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PWM_GENERATOR|load_1:inst
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+d[2] => q[2]~reg0.DATAIN
+d[3] => q[3]~reg0.DATAIN
+d[4] => q[4]~reg0.DATAIN
+d[5] => q[5]~reg0.DATAIN
+d[6] => q[6]~reg0.DATAIN
+d[7] => q[7]~reg0.DATAIN
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+clk => q[4]~reg0.CLK
+clk => q[5]~reg0.CLK
+clk => q[6]~reg0.CLK
+clk => q[7]~reg0.CLK
+ld => q[0]~reg0.ENA
+ld => q[1]~reg0.ENA
+ld => q[2]~reg0.ENA
+ld => q[3]~reg0.ENA
+ld => q[4]~reg0.ENA
+ld => q[5]~reg0.ENA
+ld => q[6]~reg0.ENA
+ld => q[7]~reg0.ENA
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,69 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "RDY",
+					"strict" : false
+				},
+				{
+					"name" : "VALID",
+					"strict" : false
+				},
+				{
+					"name" : "PWM",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "NRST",
+					"strict" : false
+				},
+				{
+					"name" : "Init",
+					"strict" : false
+				},
+				{
+					"name" : "Avail",
+					"strict" : false
+				},
+				{
+					"name" : "D_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "D_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "D_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "D_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "D_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D_in[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

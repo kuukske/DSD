@@ -1,0 +1,248 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Bram Kuijk/Documents/DSD/simulation/modelsim
+Ecompare_period
+Z1 w1543349294
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd
+Z5 FC:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd
+l0
+L29
+VH<:dnCUAjX6ng_gO>@a6T1
+!s100 e]]?IdG<CZgJNiJIT[JUN0
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1543362874
+!i10b 1
+Z8 !s108 1543362874.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd|
+Z10 !s107 C:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Acompare_period_architecture
+R2
+R3
+DEx4 work 14 compare_period 0 22 H<:dnCUAjX6ng_gO>@a6T1
+l47
+L44
+VLbl^ea6j?NS?OF2ekG>1=0
+!s100 E>aC7>_WbW0L8XHbFjFCO0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecompare_pwm
+Z13 w1543348033
+R2
+R3
+R0
+Z14 8C:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd
+Z15 FC:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd
+l0
+L29
+VB^^;]=lHFNodT_XIU0P?j2
+!s100 ?JWJR7RWY`HP66OQ33G^>0
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd|
+Z17 !s107 C:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd|
+!i113 1
+R11
+R12
+Acompare_pwm_architecture
+R2
+R3
+DEx4 work 11 compare_pwm 0 22 B^^;]=lHFNodT_XIU0P?j2
+l45
+L44
+V26[DbVjK5DZ^JaJUfo8g@0
+!s100 1I5XO?;nEGo@N<ikYfamU2
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Ecounter
+Z18 w1543362200
+Z19 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z20 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R2
+R3
+R0
+Z21 8C:/Users/Bram Kuijk/Documents/DSD/counter.vhd
+Z22 FC:/Users/Bram Kuijk/Documents/DSD/counter.vhd
+l0
+L31
+VBiK=bZDb<a4@WZc1YXS=<2
+!s100 g68@NhO5K]6IVbeKCkDkn0
+R6
+31
+R7
+!i10b 1
+R8
+Z23 !s90 -reportprogress|300|-93|-work|work|C:/Users/Bram Kuijk/Documents/DSD/counter.vhd|
+Z24 !s107 C:/Users/Bram Kuijk/Documents/DSD/counter.vhd|
+!i113 1
+R11
+R12
+Acounter_architecture
+R19
+R20
+R2
+R3
+DEx4 work 7 counter 0 22 BiK=bZDb<a4@WZc1YXS=<2
+l50
+L46
+V2NW_KKlaFDc8Ga5HX5;_^1
+!s100 >8oc17WYLPDoKTI03eGZ61
+R6
+31
+R7
+!i10b 1
+R8
+R23
+R24
+!i113 1
+R11
+R12
+Eload_1
+Z25 w1543358901
+R2
+R3
+R0
+Z26 8C:/Users/Bram Kuijk/Documents/DSD/load_1.vhd
+Z27 FC:/Users/Bram Kuijk/Documents/DSD/load_1.vhd
+l0
+L29
+VdI0acF5oB>VWZj?HH[_T[3
+!s100 0PT]cHEQZ2BklW9dkh93X0
+R6
+31
+R7
+!i10b 1
+R8
+Z28 !s90 -reportprogress|300|-93|-work|work|C:/Users/Bram Kuijk/Documents/DSD/load_1.vhd|
+Z29 !s107 C:/Users/Bram Kuijk/Documents/DSD/load_1.vhd|
+!i113 1
+R11
+R12
+Aload_1_architecture
+R2
+R3
+DEx4 work 6 load_1 0 22 dI0acF5oB>VWZj?HH[_T[3
+l43
+L40
+Vm62];7LmKZDKfza_Ac@J62
+!s100 YB;Yjb=Io=NNE;3fT[2iJ0
+R6
+31
+R7
+!i10b 1
+R8
+R28
+R29
+!i113 1
+R11
+R12
+Epwm_controller
+Z30 w1543359682
+R2
+R3
+R0
+Z31 8C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd
+Z32 FC:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd
+l0
+L32
+V?MN@P57fFzML1WEUoRSoZ0
+!s100 hcI1Kd2_RU`eEo3]7=YUM2
+R6
+31
+Z33 !s110 1543362875
+!i10b 1
+Z34 !s108 1543362875.000000
+Z35 !s90 -reportprogress|300|-93|-work|work|C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd|
+Z36 !s107 C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd|
+!i113 1
+R11
+R12
+Apwm_controller_architecture
+R2
+R3
+DEx4 work 14 pwm_controller 0 22 ?MN@P57fFzML1WEUoRSoZ0
+l60
+L55
+VDOCbR5YdZ:m>]W1e:m7EN0
+!s100 eLi5^TRHd3X0]OiDGZmza2
+R6
+31
+R33
+!i10b 1
+R34
+R35
+R36
+!i113 1
+R11
+R12
+Epwm_generator
+Z37 w1543362936
+R2
+R3
+R0
+Z38 8C:/Users/Bram Kuijk/Documents/DSD/PWM_GENERATOR.vhd
+Z39 FC:/Users/Bram Kuijk/Documents/DSD/PWM_GENERATOR.vhd
+l0
+L24
+Vnz``Nj[VkL1bOJR?_7F9?3
+!s100 1V>2HWRL@chKDhmYHO6Xd3
+R6
+32
+Z40 !s110 1543362955
+!i10b 1
+Z41 !s108 1543362955.000000
+Z42 !s90 -reportprogress|300|-work|work|C:/Users/Bram Kuijk/Documents/DSD/PWM_GENERATOR.vhd|
+Z43 !s107 C:/Users/Bram Kuijk/Documents/DSD/PWM_GENERATOR.vhd|
+!i113 1
+Z44 o-work work
+R12
+Abdf_type
+R2
+R3
+Z45 DEx4 work 13 pwm_generator 0 22 nz``Nj[VkL1bOJR?_7F9?3
+l95
+L38
+V;Gz:jX<@A[1Zk4aN@O=;91
+!s100 QaHge9:PNM^ImbL9E?Wf21
+R6
+32
+R40
+!i10b 1
+R41
+R42
+R43
+!i113 1
+R44
+R12

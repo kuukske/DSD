@@ -1,0 +1,106 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 240 384)
+	(text "PWM_Controller" (rect 5 0 84 12)(font "Arial" ))
+	(text "inst" (rect 8 128 25 140)(font "Arial" ))
+	(port
+		(pt 136 320)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 128 273 140 294)(font "Arial" )(vertical))
+		(line (pt 136 320)(pt 136 304))
+	)
+	(port
+		(pt 120 320)
+		(input)
+		(text "NRST" (rect 0 0 29 12)(font "Arial" ))
+		(text "NRST" (rect 112 265 124 294)(font "Arial" )(vertical))
+		(line (pt 120 320)(pt 120 304))
+	)
+	(port
+		(pt 80 0)
+		(input)
+		(text "Init" (rect 0 0 15 12)(font "Arial" ))
+		(text "Init" (rect 72 25 84 40)(font "Arial" )(vertical))
+		(line (pt 80 0)(pt 80 17))
+	)
+	(port
+		(pt 128 0)
+		(input)
+		(text "Avail" (rect 0 0 24 12)(font "Arial" ))
+		(text "Avail" (rect 120 25 132 49)(font "Arial" )(vertical))
+		(line (pt 128 0)(pt 128 16))
+	)
+	(port
+		(pt 0 184)
+		(input)
+		(text "Equal" (rect 0 0 27 12)(font "Arial" ))
+		(text "Equal" (rect 21 179 48 191)(font "Arial" ))
+		(line (pt 0 184)(pt 16 184))
+	)
+	(port
+		(pt 144 0)
+		(output)
+		(text "Rdy" (rect 0 0 21 12)(font "Arial" ))
+		(text "Rdy" (rect 136 23 148 44)(font "Arial" )(vertical))
+		(line (pt 144 0)(pt 144 16))
+	)
+	(port
+		(pt 88 320)
+		(output)
+		(text "Valid" (rect 0 0 23 12)(font "Arial" ))
+		(text "Valid" (rect 80 273 92 296)(font "Arial" )(vertical))
+		(line (pt 88 320)(pt 88 304))
+	)
+	(port
+		(pt 0 64)
+		(output)
+		(text "Load_1" (rect 0 0 35 12)(font "Arial" ))
+		(text "Load_1" (rect 24 56 59 68)(font "Arial" ))
+		(line (pt 16 64)(pt 0 64))
+	)
+	(port
+		(pt 0 80)
+		(output)
+		(text "Load_2" (rect 0 0 35 12)(font "Arial" ))
+		(text "Load_2" (rect 24 72 59 84)(font "Arial" ))
+		(line (pt 16 80)(pt 0 80))
+	)
+	(port
+		(pt 0 256)
+		(output)
+		(text "Clear_cntr" (rect 0 0 50 12)(font "Arial" ))
+		(text "Clear_cntr" (rect 24 248 74 260)(font "Arial" ))
+		(line (pt 16 256)(pt 0 256))
+	)
+	(port
+		(pt 0 280)
+		(output)
+		(text "tri_state_out" (rect 0 0 61 12)(font "Arial" ))
+		(text "tri_state_out" (rect 24 272 85 284)(font "Arial" ))
+		(line (pt 16 280)(pt 0 280))
+	)
+	(drawing
+		(rectangle (rect 16 16 160 304))
+	)
+)

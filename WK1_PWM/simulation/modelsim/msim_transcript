@@ -1,0 +1,128 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do PWM_GENERATOR_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Bram Kuijk/Documents/DSD/load_1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:34 on Nov 28,2018
+# vcom -reportprogress 300 -93 -work work C:/Users/Bram Kuijk/Documents/DSD/load_1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity load_1
+# -- Compiling architecture load_1_architecture of load_1
+# End time: 00:54:34 on Nov 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Bram Kuijk/Documents/DSD/counter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:34 on Nov 28,2018
+# vcom -reportprogress 300 -93 -work work C:/Users/Bram Kuijk/Documents/DSD/counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity counter
+# -- Compiling architecture counter_architecture of counter
+# End time: 00:54:34 on Nov 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:34 on Nov 28,2018
+# vcom -reportprogress 300 -93 -work work C:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity compare_PWM
+# -- Compiling architecture compare_PWM_architecture of compare_PWM
+# End time: 00:54:34 on Nov 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:34 on Nov 28,2018
+# vcom -reportprogress 300 -93 -work work C:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity compare_period
+# -- Compiling architecture compare_period_architecture of compare_period
+# End time: 00:54:34 on Nov 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:35 on Nov 28,2018
+# vcom -reportprogress 300 -93 -work work C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PWM_Controller
+# -- Compiling architecture PWM_Controller_architecture of PWM_Controller
+# End time: 00:54:35 on Nov 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work {C:/Users/Bram Kuijk/Documents/DSD/PWM_GENERATOR.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:52 on Nov 28,2018
+# vcom -reportprogress 300 -work work C:/Users/Bram Kuijk/Documents/DSD/PWM_GENERATOR.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PWM_GENERATOR
+# -- Compiling architecture bdf_type of PWM_GENERATOR
+# End time: 00:54:52 on Nov 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript rtl_work.pwm_generator
+# vsim -gui -l msim_transcript rtl_work.pwm_generator 
+# Start time: 00:55:04 on Nov 28,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading rtl_work.pwm_generator(bdf_type)
+# Loading rtl_work.load_1(load_1_architecture)
+# Loading rtl_work.compare_period(compare_period_architecture)
+# Loading rtl_work.pwm_controller(pwm_controller_architecture)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading rtl_work.counter(counter_architecture)
+# Loading rtl_work.compare_pwm(compare_pwm_architecture)
+add wave sim:/pwm_generator/*
+vcom -work work {C:/Users/Bram Kuijk/Documents/DSD/PWM_GENERATOR.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:55:55 on Nov 28,2018
+# vcom -reportprogress 300 -work work C:/Users/Bram Kuijk/Documents/DSD/PWM_GENERATOR.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PWM_GENERATOR
+# -- Compiling architecture bdf_type of PWM_GENERATOR
+# End time: 00:55:55 on Nov 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript rtl_work.pwm_generator
+# End time: 00:56:03 on Nov 28,2018, Elapsed time: 0:00:59
+# Errors: 0, Warnings: 0
+# vsim -gui -l msim_transcript rtl_work.pwm_generator 
+# Start time: 00:56:03 on Nov 28,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading rtl_work.pwm_generator(bdf_type)
+# Loading rtl_work.load_1(load_1_architecture)
+# Loading rtl_work.compare_period(compare_period_architecture)
+# Loading rtl_work.pwm_controller(pwm_controller_architecture)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading rtl_work.counter(counter_architecture)
+# Loading rtl_work.compare_pwm(compare_pwm_architecture)
+add wave sim:/pwm_generator/*
+do {C:/Users/Bram Kuijk/Documents/DSD/PWM.DO}
+do {C:/Users/Bram Kuijk/Documents/DSD/PWM.DO}
+# End time: 01:04:17 on Nov 28,2018, Elapsed time: 0:08:14
+# Errors: 0, Warnings: 0
