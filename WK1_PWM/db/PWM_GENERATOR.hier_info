@@ -1,10 +1,11 @@
 |PWM_GENERATOR
 RDY <= PWM_Controller:inst12.Rdy
 CLK => PWM_Controller:inst12.CLK
-CLK => counter:inst2.clk
+CLK => counter:inst1.clk
 CLK => load_1:inst6.clk
 CLK => load_1:inst.clk
 NRST => PWM_Controller:inst12.NRST
+NRST => counter:inst1.nrst
 Init => PWM_Controller:inst12.Init
 Avail => PWM_Controller:inst12.Avail
 D_in[0] => load_1:inst6.d[0]
@@ -70,7 +71,7 @@ sw_point[7] => LessThan0.IN9
 equal <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|PWM_GENERATOR|counter:inst2
+|PWM_GENERATOR|counter:inst1
 clear => count[0].OUTPUTSELECT
 clear => count[1].OUTPUTSELECT
 clear => count[2].OUTPUTSELECT
@@ -95,6 +96,14 @@ clk => count[4].CLK
 clk => count[5].CLK
 clk => count[6].CLK
 clk => count[7].CLK
+nrst => count[7].ACLR
+nrst => count[6].ACLR
+nrst => count[5].ACLR
+nrst => count[4].ACLR
+nrst => count[3].ACLR
+nrst => count[2].ACLR
+nrst => count[1].ACLR
+nrst => count[0].ACLR
 q[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
 q[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
 q[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE

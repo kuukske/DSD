@@ -14,7 +14,7 @@
 
 -- PROGRAM		"Quartus Prime"
 -- VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
--- CREATED		"Wed Nov 28 00:55:36 2018"
+-- CREATED		"Wed Nov 28 10:20:53 2018"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -45,6 +45,14 @@ COMPONENT load_1
 	);
 END COMPONENT;
 
+COMPONENT counter
+	PORT(clear : IN STD_LOGIC;
+		 clk : IN STD_LOGIC;
+		 nrst : IN STD_LOGIC;
+		 q : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
+END COMPONENT;
+
 COMPONENT compare_period
 	PORT(cntr : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 		 sw_point : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -67,13 +75,6 @@ COMPONENT pwm_controller
 	);
 END COMPONENT;
 
-COMPONENT counter
-	PORT(clear : IN STD_LOGIC;
-		 clk : IN STD_LOGIC;
-		 q : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
-	);
-END COMPONENT;
-
 COMPONENT compare_pwm
 	PORT(cntr : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 		 sw_point : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -81,15 +82,15 @@ COMPONENT compare_pwm
 	);
 END COMPONENT;
 
-SIGNAL	counter_bus :  STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL	cntr_clr :  STD_LOGIC;
+SIGNAL	count_vector :  STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL	equal_wire :  STD_LOGIC;
 SIGNAL	load_1_wire :  STD_LOGIC;
 SIGNAL	load_2_wire :  STD_LOGIC;
-SIGNAL	pre_tri_state :  STD_LOGIC;
+SIGNAL	PWM_compare_out :  STD_LOGIC;
 SIGNAL	reg_1_data :  STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL	reg_2_data :  STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL	tri_state_wire :  STD_LOGIC;
-SIGNAL	SYNTHESIZED_WIRE_0 :  STD_LOGIC;
 
 
 BEGIN 
@@ -103,8 +104,15 @@ PORT MAP(clk => CLK,
 		 q => reg_1_data);
 
 
+b2v_inst1 : counter
+PORT MAP(clear => cntr_clr,
+		 clk => CLK,
+		 nrst => NRST,
+		 q => count_vector);
+
+
 b2v_inst10 : compare_period
-PORT MAP(cntr => counter_bus,
+PORT MAP(cntr => count_vector,
 		 sw_point => reg_2_data,
 		 equal => equal_wire);
 
@@ -119,24 +127,18 @@ PORT MAP(CLK => CLK,
 		 Valid => VALID,
 		 Load_1 => load_1_wire,
 		 Load_2 => load_2_wire,
-		 Clear_cntr => SYNTHESIZED_WIRE_0,
+		 Clear_cntr => cntr_clr,
 		 tri_state_out => tri_state_wire);
 
 
-PROCESS(pre_tri_state,tri_state_wire)
+PROCESS(PWM_compare_out,tri_state_wire)
 BEGIN
 if (tri_state_wire = '1') THEN
-	PWM <= pre_tri_state;
+	PWM <= PWM_compare_out;
 ELSE
 	PWM <= 'Z';
 END IF;
 END PROCESS;
-
-
-b2v_inst2 : counter
-PORT MAP(clear => SYNTHESIZED_WIRE_0,
-		 clk => CLK,
-		 q => counter_bus);
 
 
 b2v_inst6 : load_1
@@ -147,9 +149,9 @@ PORT MAP(clk => CLK,
 
 
 b2v_inst8 : compare_pwm
-PORT MAP(cntr => counter_bus,
+PORT MAP(cntr => count_vector,
 		 sw_point => reg_1_data,
-		 PWM => pre_tri_state);
+		 PWM => PWM_compare_out);
 
 
 END bdf_type;

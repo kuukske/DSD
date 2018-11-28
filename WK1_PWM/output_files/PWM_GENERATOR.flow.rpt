@@ -1,5 +1,5 @@
 Flow report for PWM_GENERATOR
-Wed Nov 28 00:48:37 2018
+Wed Nov 28 10:19:09 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Nov 28 00:48:37 2018       ;
+; Flow Status                     ; Successful - Wed Nov 28 10:19:09 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; PWM_GENERATOR                               ;
 ; Top-level Entity Name           ; PWM_GENERATOR                               ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/28/2018 00:48:18 ;
+; Start date & time ; 11/28/2018 10:18:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PWM_GENERATOR       ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 121373820420.154336249805164           ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 121373820420.154339673001664           ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -98,8 +98,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:21     ; 1.0                     ; 720 MB              ; 00:00:34                           ;
-; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:34                           ;
+; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 720 MB              ; 00:00:35                           ;
+; Total                ; 00:00:22     ; --                      ; --                  ; 00:00:35                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

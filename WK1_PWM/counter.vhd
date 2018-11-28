@@ -32,9 +32,10 @@ ENTITY counter IS
 -- {{ALTERA_IO_BEGIN}} DO NOT REMOVE THIS LINE!
 PORT
 (
-clear : IN STD_LOGIC;
-clk : IN STD_LOGIC;
-q : OUT STD_LOGIC_vector(7 DOWNTO 0)
+clear : IN STD_LOGIC;									--clear counter input
+clk : IN STD_LOGIC;										--clock input
+nrst: IN STD_LOGIC;										--async reset
+q : OUT STD_LOGIC_vector(7 DOWNTO 0)				--counter vector output
 );
 -- {{ALTERA_IO_END}} DO NOT REMOVE THIS LINE!
 
@@ -48,14 +49,18 @@ signal count : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000000";
 
 
 BEGIN
-process(clk, clear)
+process(clk, clear, nrst)
 	begin
-		if (rising_edge(clk)) and (clear = '0') then
-			count <= count + 1;
-		elsif (rising_edge(clk)) and (clear = '1') then
-			count <= "00000000";
-		end if;
-		q <= count;
+		IF(nrst = '1') THEN
+			IF(rising_edge(clk)) and (clear = '0') THEN			--if NRST, rising edge clk and not clearing, count +1
+				count <= count + 1;
+			ELSIF (rising_edge(clk)) and (clear = '1') THEN		--else if NRST, rising edge clk and clear, count <= "0000000"
+				count <= "00000000";
+			END IF;
+		ELSE
+			count <= "00000000";											--if /NRST, clear counter output, no counter operation
+		END IF;
+			q <= count;
 			
  	end process;
 

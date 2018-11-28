@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PWM_GENERATOR
-Wed Nov 28 00:48:37 2018
+Wed Nov 28 10:19:09 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Nov 28 00:48:37 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed Nov 28 10:19:09 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; PWM_GENERATOR                               ;
 ; Top-level Entity Name           ; PWM_GENERATOR                               ;
@@ -167,18 +167,18 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                         ; Library ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------+---------+
-; PWM_GENERATOR.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Bram Kuijk/Documents/DSD/PWM_GENERATOR.bdf  ;         ;
-; load_1.vhd                       ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/load_1.vhd         ;         ;
-; counter.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/counter.vhd        ;         ;
-; compare_PWM.vhd                  ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd    ;         ;
-; compare_period.vhd               ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd ;         ;
-; PWM_Controller.vhd               ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd ;         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                 ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------+---------+
+; PWM_GENERATOR.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_GENERATOR.bdf  ;         ;
+; load_1.vhd                       ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/load_1.vhd         ;         ;
+; counter.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/counter.vhd        ;         ;
+; compare_PWM.vhd                  ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/compare_PWM.vhd    ;         ;
+; compare_period.vhd               ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/compare_period.vhd ;         ;
+; PWM_Controller.vhd               ; yes             ; User VHDL File                     ; C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -203,8 +203,8 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
 ; Maximum fan-out                             ; 27        ;
-; Total fan-out                               ; 213       ;
-; Average fan-out                             ; 2.42      ;
+; Total fan-out                               ; 221       ;
+; Average fan-out                             ; 2.51      ;
 +---------------------------------------------+-----------+
 
 
@@ -217,7 +217,7 @@ refer to the applicable agreement for further details.
 ;    |PWM_Controller:inst12| ; 11 (11)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|PWM_Controller:inst12 ; PWM_Controller ; work         ;
 ;    |compare_PWM:inst8|     ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|compare_PWM:inst8     ; compare_PWM    ; work         ;
 ;    |compare_period:inst10| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|compare_period:inst10 ; compare_period ; work         ;
-;    |counter:inst2|         ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|counter:inst2         ; counter        ; work         ;
+;    |counter:inst1|         ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|counter:inst1         ; counter        ; work         ;
 ;    |load_1:inst6|          ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|load_1:inst6          ; load_1         ; work         ;
 ;    |load_1:inst|           ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM_GENERATOR|load_1:inst           ; load_1         ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+----------------+--------------+
@@ -245,7 +245,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Total registers                              ; 27    ;
 ; Number of registers using Synchronous Clear  ; 8     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 11    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 16    ;
 ; Number of registers using Preset             ; 0     ;
@@ -259,8 +259,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 27                          ;
 ;     CLR               ; 3                           ;
+;     CLR SCLR          ; 8                           ;
 ;     ENA               ; 16                          ;
-;     SCLR              ; 8                           ;
 ; arriav_io_obuf        ; 1                           ;
 ; arriav_lcell_comb     ; 31                          ;
 ;     arith             ; 8                           ;
@@ -293,44 +293,44 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Nov 28 00:48:16 2018
+    Info: Processing started: Wed Nov 28 10:18:47 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PWM_GENERATOR -c PWM_GENERATOR
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file pwm_generator.bdf
     Info (12023): Found entity 1: PWM_GENERATOR
 Info (12021): Found 2 design units, including 1 entities, in source file load_1.vhd
-    Info (12022): Found design unit 1: load_1-load_1_architecture File: C:/Users/Bram Kuijk/Documents/DSD/load_1.vhd Line: 40
-    Info (12023): Found entity 1: load_1 File: C:/Users/Bram Kuijk/Documents/DSD/load_1.vhd Line: 29
+    Info (12022): Found design unit 1: load_1-load_1_architecture File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/load_1.vhd Line: 43
+    Info (12023): Found entity 1: load_1 File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/load_1.vhd Line: 32
 Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
-    Info (12022): Found design unit 1: counter-counter_architecture File: C:/Users/Bram Kuijk/Documents/DSD/counter.vhd Line: 46
-    Info (12023): Found entity 1: counter File: C:/Users/Bram Kuijk/Documents/DSD/counter.vhd Line: 31
+    Info (12022): Found design unit 1: counter-counter_architecture File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/counter.vhd Line: 47
+    Info (12023): Found entity 1: counter File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/counter.vhd Line: 31
 Info (12021): Found 2 design units, including 1 entities, in source file compare_pwm.vhd
-    Info (12022): Found design unit 1: compare_PWM-compare_PWM_architecture File: C:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd Line: 44
-    Info (12023): Found entity 1: compare_PWM File: C:/Users/Bram Kuijk/Documents/DSD/compare_PWM.vhd Line: 29
+    Info (12022): Found design unit 1: compare_PWM-compare_PWM_architecture File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/compare_PWM.vhd Line: 47
+    Info (12023): Found entity 1: compare_PWM File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/compare_PWM.vhd Line: 32
 Info (12021): Found 2 design units, including 1 entities, in source file compare_period.vhd
-    Info (12022): Found design unit 1: compare_period-compare_period_architecture File: C:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd Line: 44
-    Info (12023): Found entity 1: compare_period File: C:/Users/Bram Kuijk/Documents/DSD/compare_period.vhd Line: 29
+    Info (12022): Found design unit 1: compare_period-compare_period_architecture File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/compare_period.vhd Line: 47
+    Info (12023): Found entity 1: compare_period File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/compare_period.vhd Line: 32
 Info (12021): Found 2 design units, including 1 entities, in source file pwm_controller.vhd
-    Info (12022): Found design unit 1: PWM_Controller-PWM_Controller_architecture File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 55
-    Info (12023): Found entity 1: PWM_Controller File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 32
+    Info (12022): Found design unit 1: PWM_Controller-PWM_Controller_architecture File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 55
+    Info (12023): Found entity 1: PWM_Controller File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 32
 Info (12127): Elaborating entity "PWM_GENERATOR" for the top level hierarchy
 Info (12128): Elaborating entity "PWM_Controller" for hierarchy "PWM_Controller:inst12"
-Warning (10631): VHDL Process Statement warning at PWM_Controller.vhd(64): inferring latch(es) for signal or variable "next_state", which holds its previous value in one or more paths through the process File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
-Info (10041): Inferred latch for "next_state[0]" at PWM_Controller.vhd(64) File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
-Info (10041): Inferred latch for "next_state[1]" at PWM_Controller.vhd(64) File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
-Info (10041): Inferred latch for "next_state[2]" at PWM_Controller.vhd(64) File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at PWM_Controller.vhd(64): inferring latch(es) for signal or variable "next_state", which holds its previous value in one or more paths through the process File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 64
+Info (10041): Inferred latch for "next_state[0]" at PWM_Controller.vhd(64) File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 64
+Info (10041): Inferred latch for "next_state[1]" at PWM_Controller.vhd(64) File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 64
+Info (10041): Inferred latch for "next_state[2]" at PWM_Controller.vhd(64) File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 64
 Info (12128): Elaborating entity "compare_period" for hierarchy "compare_period:inst10"
-Info (12128): Elaborating entity "counter" for hierarchy "counter:inst2"
-Warning (10492): VHDL Process Statement warning at counter.vhd(58): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bram Kuijk/Documents/DSD/counter.vhd Line: 58
+Info (12128): Elaborating entity "counter" for hierarchy "counter:inst1"
+Warning (10492): VHDL Process Statement warning at counter.vhd(63): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/counter.vhd Line: 63
 Info (12128): Elaborating entity "load_1" for hierarchy "load_1:inst6"
 Info (12128): Elaborating entity "compare_PWM" for hierarchy "compare_PWM:inst8"
-Warning (13012): Latch PWM_Controller:inst12|next_state[1] has unsafe behavior File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PWM_Controller:inst12|current_state[2] File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 112
-Warning (13012): Latch PWM_Controller:inst12|next_state[0] has unsafe behavior File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PWM_Controller:inst12|current_state[0] File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 112
-Warning (13012): Latch PWM_Controller:inst12|next_state[2] has unsafe behavior File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 64
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal PWM_Controller:inst12|current_state[2] File: C:/Users/Bram Kuijk/Documents/DSD/PWM_Controller.vhd Line: 112
+Warning (13012): Latch PWM_Controller:inst12|next_state[1] has unsafe behavior File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PWM_Controller:inst12|current_state[2] File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 112
+Warning (13012): Latch PWM_Controller:inst12|next_state[0] has unsafe behavior File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PWM_Controller:inst12|current_state[0] File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 112
+Warning (13012): Latch PWM_Controller:inst12|next_state[2] has unsafe behavior File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 64
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PWM_Controller:inst12|current_state[2] File: C:/Users/Bram Kuijk/Documents/DSD/WK1_PWM/PWM_Controller.vhd Line: 112
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -340,8 +340,8 @@ Info (21057): Implemented 65 device resources after synthesis - the final resour
     Info (21061): Implemented 50 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
     Info: Peak virtual memory: 720 megabytes
-    Info: Processing ended: Wed Nov 28 00:48:37 2018
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:34
+    Info: Processing ended: Wed Nov 28 10:19:09 2018
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:35
 
 
