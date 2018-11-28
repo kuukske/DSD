@@ -25,6 +25,9 @@
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+USE ieee.STD_LOGIC_UNSIGNED.all;
+
 
 
 --  Entity Declaration
@@ -48,7 +51,7 @@ ARCHITECTURE compare_period_architecture OF compare_period IS
 BEGIN
 	process(cntr, sw_point)
 	begin
-		if cntr < sw_point then				--if counter < switch over point, output <= '0' 
+		if cntr < (sw_point - 1) then				--if counter < switch over point, output <= '0' 
 			equal <= '0';
 		else
 			equal <= '1';						--else (if counter < or = to switch over point), output <'1'
