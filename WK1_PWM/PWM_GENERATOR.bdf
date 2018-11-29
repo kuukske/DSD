@@ -394,7 +394,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 536 360 680 472)
+	(rect 528 360 672 472)
 	(text "counter" (rect 5 0 41 12)(font "Arial" ))
 	(text "inst1" (rect 8 96 31 108)(font "Arial" ))
 	(port
@@ -435,22 +435,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 376 168)
-	(pt 376 96)
-)
-(connector
-	(pt 752 184)
-	(pt 656 184)
-)
-(connector
-	(pt 656 96)
-	(pt 624 96)
-)
-(connector
-	(pt 752 360)
-	(pt 712 360)
-)
-(connector
 	(pt 752 384)
 	(pt 744 384)
 )
@@ -477,22 +461,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 872 504)
 	(pt 872 424)
-)
-(connector
-	(pt 256 152)
-	(pt 256 208)
-)
-(connector
-	(pt 504 208)
-	(pt 504 152)
-)
-(connector
-	(pt 256 208)
-	(pt 480 208)
-)
-(connector
-	(pt 480 208)
-	(pt 504 208)
 )
 (connector
 	(pt 808 56)
@@ -531,16 +499,6 @@ refer to the applicable agreement for further details.
 	(pt 808 32)
 )
 (connector
-	(text "load_1_wire" (rect 386 152 445 169)(font "Intel Clear" ))
-	(pt 752 168)
-	(pt 376 168)
-)
-(connector
-	(text "load_2_wire" (rect 640 124 657 183)(font "Intel Clear" )(vertical))
-	(pt 656 184)
-	(pt 656 96)
-)
-(connector
 	(text "equal_wire" (rect 674 272 727 289)(font "Intel Clear" ))
 	(pt 664 288)
 	(pt 752 288)
@@ -551,13 +509,7 @@ refer to the applicable agreement for further details.
 	(pt 744 544)
 )
 (connector
-	(text "reg_1_data[7..0]" (rect 280 192 297 269)(font "Intel Clear" )(vertical))
-	(pt 296 152)
-	(pt 296 248)
-	(bus)
-)
-(connector
-	(text "reg_2_data[7..0]" (rect 536 192 553 269)(font "Intel Clear" )(vertical))
+	(text "reg_2_data[7..0]" (rect 536 160 553 237)(font "Intel Clear" )(vertical))
 	(pt 544 152)
 	(pt 544 248)
 	(bus)
@@ -576,17 +528,75 @@ refer to the applicable agreement for further details.
 	(pt 888 488)
 )
 (connector
-	(pt 480 208)
-	(pt 480 488)
-)
-(connector
-	(pt 168 488)
-	(pt 480 488)
-)
-(connector
 	(pt 448 288)
 	(pt 448 352)
 	(bus)
+)
+(connector
+	(text "count_vector[7..0]" (rect 490 336 574 353)(font "Intel Clear" ))
+	(pt 448 352)
+	(pt 600 352)
+	(bus)
+)
+(connector
+	(pt 376 96)
+	(pt 400 96)
+)
+(connector
+	(pt 504 152)
+	(pt 504 192)
+)
+(connector
+	(pt 480 192)
+	(pt 480 488)
+)
+(connector
+	(pt 480 192)
+	(pt 504 192)
+)
+(connector
+	(pt 256 224)
+	(pt 256 152)
+)
+(connector
+	(pt 256 224)
+	(pt 224 224)
+)
+(connector
+	(pt 224 488)
+	(pt 224 224)
+)
+(connector
+	(pt 168 488)
+	(pt 224 488)
+)
+(connector
+	(pt 224 488)
+	(pt 480 488)
+)
+(connector
+	(pt 568 488)
+	(pt 568 472)
+)
+(connector
+	(pt 584 504)
+	(pt 584 472)
+)
+(connector
+	(pt 480 488)
+	(pt 568 488)
+)
+(connector
+	(pt 568 488)
+	(pt 888 488)
+)
+(connector
+	(pt 168 504)
+	(pt 584 504)
+)
+(connector
+	(pt 584 504)
+	(pt 872 504)
 )
 (connector
 	(pt 600 328)
@@ -594,57 +604,54 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "cntr_clr" (rect 696 384 713 419)(font "Intel Clear" )(vertical))
+	(pt 600 352)
+	(pt 600 360)
+	(bus)
+)
+(connector
+	(pt 752 184)
+	(pt 672 184)
+)
+(connector
+	(pt 624 96)
+	(pt 672 96)
+)
+(connector
+	(text "load_2_wire" (rect 664 100 681 159)(font "Intel Clear" )(vertical))
+	(pt 672 184)
+	(pt 672 96)
+)
+(connector
+	(pt 752 360)
+	(pt 712 360)
+)
+(connector
+	(text "cntr_clr" (rect 688 384 705 419)(font "Intel Clear" )(vertical))
 	(pt 712 360)
 	(pt 712 432)
 )
 (connector
-	(pt 576 488)
-	(pt 576 472)
-)
-(connector
-	(pt 592 504)
-	(pt 592 472)
-)
-(connector
-	(pt 608 352)
-	(pt 608 360)
-	(bus)
-)
-(connector
+	(pt 672 432)
 	(pt 712 432)
-	(pt 680 432)
 )
 (connector
-	(pt 480 488)
-	(pt 576 488)
-)
-(connector
-	(pt 576 488)
-	(pt 888 488)
-)
-(connector
-	(pt 168 504)
-	(pt 592 504)
-)
-(connector
-	(pt 592 504)
-	(pt 872 504)
-)
-(connector
-	(text "count_vector[7..0]" (rect 458 336 542 353)(font "Intel Clear" ))
-	(pt 448 352)
-	(pt 600 352)
+	(text "reg_1_data[7..0]" (rect 272 160 289 237)(font "Intel Clear" )(vertical))
+	(pt 296 152)
+	(pt 296 248)
 	(bus)
 )
 (connector
-	(pt 600 352)
-	(pt 608 352)
-	(bus)
+	(pt 400 96)
+	(pt 400 168)
 )
-(junction (pt 480 208))
+(connector
+	(text "load_1_wire" (rect 402 168 461 185)(font "Intel Clear" ))
+	(pt 400 168)
+	(pt 752 168)
+)
 (junction (pt 296 -56))
 (junction (pt 480 488))
-(junction (pt 576 488))
-(junction (pt 592 504))
 (junction (pt 600 352))
+(junction (pt 224 488))
+(junction (pt 568 488))
+(junction (pt 584 504))
