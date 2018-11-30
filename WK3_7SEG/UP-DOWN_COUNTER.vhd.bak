@@ -1,0 +1,53 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+--///////////////////////////////////////////////////////////
+--////////////////////ENTITY DECLARATION////////////////////
+--/////////////////////////////////////////////////////////
+ENTITY UP_DOWN_COUNTER IS
+
+PORT
+(
+clk		:	IN	STD_LOGIC;
+nrst	:	IN	STD_LOGIC;
+up		:	IN	STD_LOGIC;
+
+q		:	OUT INTEGER RANGE -1 TO 4
+);
+
+END UP_DOWN_COUNTER;
+
+--///////////////////////////////////////////////////////////
+--///////////////////////ARCHITECTURE///////////////////////
+--/////////////////////////////////////////////////////////
+ARCHITECTURE UP_DOWN_COUNTER_architecture OF UP_DOWN_COUNTER IS
+SIGNAL count	:	INTEGER : -1; 
+
+BEGIN
+
+--///////////////////////////////////////////////////////////
+--//////////////////////////PROCESS/////////////////////////
+--/////////////////////////////////////////////////////////
+IF	/nrst 	THEN
+	q <= -1 AFTER 5 ns;
+ELSIF	(count < 0) OR (count > 4)	THEN
+	q <= -1 AFTER 10 ns;
+ELSE 
+	q <= count AFTER 10 ns;
+END IF;
+	
+up_down_count:	PROCESS(clk, nrst)
+	BEGIN
+		IF nrst THEN
+			IF rising_edge(clk) THEN
+				IF up THEN
+					count <= count + 1;
+				ELSE
+					count <= count - 1;
+				END IF;
+			END IF;
+		END IF;
+		
+	END PROCESS up_down_count;
+
+END UP_DOWN_COUNTER_architecture;
