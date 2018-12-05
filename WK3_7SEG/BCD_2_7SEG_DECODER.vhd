@@ -30,7 +30,7 @@ ENTITY BCD_2_7SEG_DECODER IS
 -- {{ALTERA_IO_BEGIN}} DO NOT REMOVE THIS LINE!
 PORT
 (
-STATE : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+STATE : IN INTEGER RANGE -1 TO 9;
 
 SEG_A : OUT STD_LOGIC;
 SEG_B : OUT STD_LOGIC;
@@ -55,7 +55,7 @@ BEGIN
 BCD_2_7SEG_DECODER:	PROCESS(STATE)
 	BEGIN
 		CASE STATE IS
-			WHEN	"0000"	=> 	--OUT = 0
+			WHEN	0	=> 	--OUT = 0
 			SEG_A		<=		'1'	AFTER	10 ns	;
 			SEG_B		<=		'1'	AFTER	10 ns	;
 			SEG_C		<=		'1'	AFTER	10 ns	;
@@ -64,7 +64,7 @@ BCD_2_7SEG_DECODER:	PROCESS(STATE)
 			SEG_F		<=		'1'	AFTER	10 ns	;
 			SEG_G		<=		'0'	AFTER	10 ns	;
 			
-			WHEN	"0001"	=>		--OUT 1
+			WHEN	1	=>		--OUT 1
 			SEG_A		<=		'0'	AFTER	10 ns	;
 			SEG_B		<=		'1'	AFTER	10 ns	;
 			SEG_C		<=		'1'	AFTER	10 ns	;
@@ -73,7 +73,7 @@ BCD_2_7SEG_DECODER:	PROCESS(STATE)
 			SEG_F		<=		'0'	AFTER	10 ns	;
 			SEG_G		<=		'0'	AFTER	10 ns	;
 			
-			WHEN	"0010"	=>		--OUT 2
+			WHEN	2	=>		--OUT 2
 			SEG_A		<=		'1'	AFTER	10 ns	;
 			SEG_B		<=		'1'	AFTER	10 ns	;
 			SEG_C		<=		'0'	AFTER	10 ns	;
@@ -82,7 +82,7 @@ BCD_2_7SEG_DECODER:	PROCESS(STATE)
 			SEG_F		<=		'0'	AFTER	10 ns	;
 			SEG_G		<=		'1'	AFTER	10 ns	;
 			
-			WHEN	"0011"	=>		--OUT 3
+			WHEN	3	=>		--OUT 3
 			SEG_A		<=		'1'	AFTER	10 ns	;
 			SEG_B		<=		'1'	AFTER	10 ns	;
 			SEG_C		<=		'1'	AFTER	10 ns	;
@@ -91,7 +91,7 @@ BCD_2_7SEG_DECODER:	PROCESS(STATE)
 			SEG_F		<=		'0'	AFTER	10 ns	;
 			SEG_G		<=		'1'	AFTER	10 ns	;
 			
-			WHEN	"0100"	=>		--OUT 4
+			WHEN	4	=>		--OUT 4
 			SEG_A		<=		'0'	AFTER	10 ns	;
 			SEG_B		<=		'1'	AFTER	10 ns	;
 			SEG_C		<=		'1'	AFTER	10 ns	;
@@ -100,7 +100,7 @@ BCD_2_7SEG_DECODER:	PROCESS(STATE)
 			SEG_F		<=		'1'	AFTER	10 ns	;
 			SEG_G		<=		'1'	AFTER	10 ns	;
 			
-			WHEN	"0101"	=>		--OUT 5
+			WHEN	5	=>		--OUT 5
 			SEG_A		<=		'1'	AFTER	10 ns	;
 			SEG_B		<=		'0'	AFTER	10 ns	;
 			SEG_C		<=		'1'	AFTER	10 ns	;
@@ -109,7 +109,7 @@ BCD_2_7SEG_DECODER:	PROCESS(STATE)
 			SEG_F		<=		'1'	AFTER	10 ns	;
 			SEG_G		<=		'1'	AFTER	10 ns	;
 			
-			WHEN	"0110"	=>		--OUT 6
+			WHEN	6	=>		--OUT 6
 			SEG_A		<=		'1'	AFTER	10 ns	;
 			SEG_B		<=		'0'	AFTER	10 ns	;
 			SEG_C		<=		'1'	AFTER	10 ns	;
@@ -118,7 +118,7 @@ BCD_2_7SEG_DECODER:	PROCESS(STATE)
 			SEG_F		<=		'1'	AFTER	10 ns	;
 			SEG_G		<=		'1'	AFTER	10 ns	;
 			
-			WHEN	"0111"	=>		--OUT 7
+			WHEN	7	=>		--OUT 7
 			SEG_A		<=		'1'	AFTER	10 ns	;
 			SEG_B		<=		'1'	AFTER	10 ns	;
 			SEG_C		<=		'1'	AFTER	10 ns	;
@@ -127,7 +127,7 @@ BCD_2_7SEG_DECODER:	PROCESS(STATE)
 			SEG_F		<=		'0'	AFTER	10 ns	;
 			SEG_G		<=		'0'	AFTER	10 ns	;
 			
-			WHEN	"1000"	=>		--OUT 8
+			WHEN	8	=>		--OUT 8
 			SEG_A		<=		'1'	AFTER	10 ns	;
 			SEG_B		<=		'1'	AFTER	10 ns	;
 			SEG_C		<=		'1'	AFTER	10 ns	;
@@ -136,7 +136,7 @@ BCD_2_7SEG_DECODER:	PROCESS(STATE)
 			SEG_F		<=		'1'	AFTER	10 ns	;
 			SEG_G		<=		'1'	AFTER	10 ns	;
 			
-			WHEN	"1001"	=>		--OUT 8
+			WHEN	9	=>		--OUT 9
 			SEG_A		<=		'1'	AFTER	10 ns	;
 			SEG_B		<=		'1'	AFTER	10 ns	;
 			SEG_C		<=		'1'	AFTER	10 ns	;

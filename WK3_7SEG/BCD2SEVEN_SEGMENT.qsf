@@ -61,4 +61,6 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME BCD_2_7SEG_TB -section_id
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/BCD2SEVEN_SEGMENT_TBB.vht -section_id BCD_2_7SEG_TB
 set_global_assignment -name VHDL_FILE BCD_2_7SEG_DECODER.vhd
 set_global_assignment -name VHDL_FILE BCD2SEVEN_SEGMENT_TB.vhd
+set_global_assignment -name VHDL_FILE "UP-DOWN_COUNTER.vhd"
+set_global_assignment -name BDF_FILE combined.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

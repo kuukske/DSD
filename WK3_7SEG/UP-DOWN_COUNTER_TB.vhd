@@ -45,9 +45,9 @@ DUT	:	UP_DOWN_COUNTER PORT MAP(
 	PROCESS
 		BEGIN
 			clk_stim <= '1';
-			WAIT FOR 20 ns;
+			WAIT FOR (clk_period / 2);
 			clk_stim <= '0';
-			WAIT FOR 20 ns;
+			WAIT FOR (clk_period / 2);
 	END PROCESS;
 
 	PROCESS
@@ -55,8 +55,12 @@ DUT	:	UP_DOWN_COUNTER PORT MAP(
 			
 			nrst_stim <= '1'; 
 			up_stim <= '1';
-			--WAIT FOR clk_period;
 			
+			WAIT FOR (clk_period / 2);
+			
+			ASSERT 1 = 0
+				REPORT "TESTING OUTPUT = -1"
+				SEVERITY 	note;
 			ASSERT q_in = -1
 				REPORT "INCORRECT INITIAL VALUE, SHOULD BE -1"
 				SEVERITY	error;
@@ -64,24 +68,29 @@ DUT	:	UP_DOWN_COUNTER PORT MAP(
 			
 			FOR i IN 0 TO 9 LOOP
 				WAIT FOR clk_period;
-				--WAIT FOR 10 ns ; 
+				ASSERT 1 = 0
+					REPORT "TESTING OUTPUT = " &integer'image(i)
+					SEVERITY	note;
 				ASSERT q_in = i 
-					REPORT "INCORECT COUNTER VALUE"
+					REPORT "INCORECT COUNTER VALUE (COUNT UP)" &integer'image(i)
 					SEVERITY 	error; 
 			END LOOP;
 			
 			up_stim <= '0';
 			
-			FOR i IN 0 TO 9 LOOP
+			FOR i IN 0 TO 8 LOOP
 				WAIT FOR clk_period;
-				ASSERT q_in = (9 - i)
-					REPORT "INCORRECT COUNTER VALUE"
+				ASSERT 1 = 0
+					REPORT "TESTING OUTPUT = " &integer'image(8 - i)
+					SEVERITY	note;
+				ASSERT q_in = (8 - i)
+					REPORT "INCORRECT COUNTER VALUE (COUNT DOWN). i = " &integer'image(8 - i)
 					SEVERITY	error;
 			END LOOP;
 			
-		
-		
-		
+		ASSERT 1 = 0
+			REPORT "TEST COMPLETE"
+			SEVERITY	note;
 		
 		WAIT;
 	END PROCESS;
