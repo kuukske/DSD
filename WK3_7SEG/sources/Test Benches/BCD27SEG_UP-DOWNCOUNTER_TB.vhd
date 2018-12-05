@@ -53,7 +53,6 @@ ARCHITECTURE BENCH OF UDC_BCD27SEG_TB IS
 	
 	--Internal signals
 	SIGNAL	state_signal	:	INTEGER RANGE -1 TO 9;
-	SIGNAL 	clk_cntr		:	TIME;
 	
 	--Constants
 	CONSTANT	clk_period	:	TIME	:=	30 ns;
@@ -122,33 +121,53 @@ u2	:	BCD_2_7SEG_DECODER PORT MAP(
 		
 		up_stim <= '1';
 		nrst_stim <= '0';
-		WAIT FOR (clk_period/2);
+		WAIT FOR (clk_period/2);		--15ns
 		nrst_stim <= '1';
 		
-		WAIT FOR (clk_period / 2);
+		WAIT FOR (clk_period / 2);		--30ns
 		
 		FOR i IN 0 TO 9 LOOP
 			WAIT FOR clk_period;
 			ASSERT SEG_COMB = assert_7seg(i)
-				REPORT	"WRONG OUTPUT. i = "	&integer'image(i)
+				REPORT	"WRONG OUTPUT. COUNT UP 1. i = "	&integer'image(i)
 				SEVERITY	error;
 		END LOOP;
 		
-		up_stim <= '0';
+		--330ns
 		
+		WAIT FOR clk_period;		--360ns
+		
+		ASSERT SEG_COMB = assert_7seg(-1)
+			REPORT "WRONG OUTPUT. i = -1"
+			SEVERITY	error;
+		
+		FOR i IN 0 TO 9 LOOP
+			WAIT FOR clk_period;
+			ASSERT SEG_COMB = assert_7seg(i)
+				REPORT	"WRONG OUTPUT. COUNT UP 2. i = "	&integer'image(i)
+				SEVERITY	error;
+		END LOOP;
+		
+		--660ns
+		
+		up_stim <= '0';
+
 		FOR i IN 0 TO 8 LOOP
 			WAIT FOR clk_period;
 			ASSERT SEG_COMB = assert_7seg(8 - i)
-				REPORT "WRONG OUTPUT. i = "	&integer'image(8 - i)
+				REPORT "WRONG OUTPUT. COUNT DOWN. i = "	&integer'image(8 - i)
 				SEVERITY	error;
 		END LOOP;
 		
-		WAIT FOR clk_period;
+		--930ns
+		
+		WAIT FOR clk_period;		--960ns
 		
 		ASSERT SEG_COMB = assert_7seg(-1)
 			REPORT	"WRONG OUTPUT. i = -1"
 			SEVERITY	error;
-			
+	
+	--Report test complete	
 		ASSERT 1 = 0
 			REPORT "TEST COMPLETED"
 			SEVERITY	note;
