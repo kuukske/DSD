@@ -33,6 +33,7 @@ ARCHITECTURE BENCH OF UDC_BCD27SEG_TB IS
 			SEG_F : OUT STD_LOGIC;
 			SEG_G : OUT STD_LOGIC			
 		);
+	END COMPONENT;
 	
 	--Read from component
 	SIGNAL SEG_A_IN	:	STD_LOGIC;
@@ -52,20 +53,17 @@ ARCHITECTURE BENCH OF UDC_BCD27SEG_TB IS
 	
 	--Internal signals
 	SIGNAL	state_signal	:	INTEGER RANGE -1 TO 9;
+	SIGNAL 	clk_cntr		:	TIME;
 	
 	--Constants
 	CONSTANT	clk_period	:	TIME	:=	30 ns;
 	
+	--Types
+	TYPE logic_vector_array IS ARRAY (-1 TO 9) OF STD_LOGIC_VECTOR(6 DOWNTO 0);	
+	SIGNAL assert_7seg	:	logic_vector_array;
+
+
 	BEGIN
-	SEG_COMB <= SEG_A_IN & 			--Concatonate all inputs to one signal. 
-					SEG_B_IN & 
-					SEG_C_IN & 
-					SEG_D_IN & 
-					SEG_E_IN & 
-					SEG_F_IN & 
-					SEG_G_IN;
-	
-	TYPE assert_7seg IS ARRAY (9 DOWNTO 0) OF STD_LOGIC_VECTOR(6 DOWNTO 0);
 	assert_7seg(-1) <= "XXXXXXX";
 	assert_7seg(0) <= "1111110";
 	assert_7seg(1) <= "0110000";
@@ -77,9 +75,14 @@ ARCHITECTURE BENCH OF UDC_BCD27SEG_TB IS
 	assert_7seg(7) <= "1110000";
 	assert_7seg(8) <= "1111111";
 	assert_7seg(9) <= "1111011";
-	
-	SIGNAL	count	:	INTEGER RANGE -1 TO 0;
-	
+	SEG_COMB <= SEG_A_IN & 			--Concatonate all inputs to one signal. 
+					SEG_B_IN & 
+					SEG_C_IN & 
+					SEG_D_IN & 
+					SEG_E_IN & 
+					SEG_F_IN & 
+					SEG_G_IN;
+
 --///////////////////////////////////////////////////////////
 --/////////////////////////PORT MAP/////////////////////////
 --/////////////////////////////////////////////////////////
@@ -88,13 +91,12 @@ u1	:	UP_DOWN_COUNTER PORT MAP(
 			nrst	=>	nrst_stim,
 			up		=>	up_stim,
 			
-			q		=>	state_signal;
+			q		=>	state_signal
 			);
 			
 u2	:	BCD_2_7SEG_DECODER PORT MAP(
 			STATE	=> state_signal,
 			
-			STATE	=>	STATE_STIM,
 			SEG_A	=>	SEG_A_IN,
 			SEG_B	=>	SEG_B_IN,
 			SEG_C	=>	SEG_C_IN,
@@ -113,30 +115,43 @@ u2	:	BCD_2_7SEG_DECODER PORT MAP(
 			WAIT FOR (clk_period / 2);
 			clk_stim <= '0';
 			WAIT FOR (clk_period / 2); 
-		END PROCESS
+		END PROCESS;
 		
 	PROCESS
 		BEGIN
 		
 		up_stim <= '1';
 		nrst_stim <= '0';
-		WAIT FOR (2 * clk_period);
+		WAIT FOR (clk_period/2);
 		nrst_stim <= '1';
 		
 		WAIT FOR (clk_period / 2);
 		
-		FOR i IN -1 TO 8 LOOP
+		FOR i IN 0 TO 9 LOOP
 			WAIT FOR clk_period;
-			ASSERT SEG_COMB = assert_7seg(1 - i)
-				REPORT	"WRONG OUTPUT. i = "	&integer'image(1 - i)
+			ASSERT SEG_COMB = assert_7seg(i)
+				REPORT	"WRONG OUTPUT. i = "	&integer'image(i)
 				SEVERITY	error;
-			END LOOP;
+		END LOOP;
 		
 		up_stim <= '0';
 		
-		FOR i IN -1 TO 9 LOOP
+		FOR i IN 0 TO 8 LOOP
 			WAIT FOR clk_period;
-			ASSERT SEG_COMB
+			ASSERT SEG_COMB = assert_7seg(8 - i)
+				REPORT "WRONG OUTPUT. i = "	&integer'image(8 - i)
+				SEVERITY	error;
+		END LOOP;
+		
+		WAIT FOR clk_period;
+		
+		ASSERT SEG_COMB = assert_7seg(-1)
+			REPORT	"WRONG OUTPUT. i = -1"
+			SEVERITY	error;
+			
+		ASSERT 1 = 0
+			REPORT "TEST COMPLETED"
+			SEVERITY	note;
 		
 		WAIT;
 	END PROCESS;
