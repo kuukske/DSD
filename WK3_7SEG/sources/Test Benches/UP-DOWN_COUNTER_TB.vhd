@@ -1,9 +1,11 @@
+-- Bram Kuijk
+-- EE7
+-- DSD
+-- Fontys Engineering Eindhoven
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
---///////////////////////////////////////////////////////////
 --////////////////////ENTITY DECLARATION////////////////////
---/////////////////////////////////////////////////////////
 ENTITY U_D_COUNTER_TB IS
 END U_D_COUNTER_TB;
 
@@ -26,12 +28,10 @@ ARCHITECTURE BENCH OF U_D_COUNTER_TB IS
 	
 	CONSTANT	clk_period	:	TIME	:= 30 ns;
 	
-	BEGIN
+	BEGIN			--Begin architecture
 	
---///////////////////////////////////////////////////////////
 --/////////////////////////PORT MAP/////////////////////////
---/////////////////////////////////////////////////////////
-DUT	:	UP_DOWN_COUNTER PORT MAP(
+
 			clk		=>	clk_stim,
 			nrst	=>	nrst_stim,
 			up		=>	up_stim,
@@ -39,9 +39,8 @@ DUT	:	UP_DOWN_COUNTER PORT MAP(
 			q		=> q_in
 			);
 			
---///////////////////////////////////////////////////////////
---////////////////////////////PROCESS///////////////////////
---/////////////////////////////////////////////////////////	
+
+--////////////////////////////PROCESS///////////////////////	
 	PROCESS
 		BEGIN
 			clk_stim <= '1';
@@ -59,14 +58,14 @@ DUT	:	UP_DOWN_COUNTER PORT MAP(
 			WAIT FOR (clk_period / 2);
 			
 			ASSERT 1 = 0
-				REPORT "TESTING OUTPUT = -1"
+				REPORT "TESTING OUTPUT = -1"		--Report what is being tested (for debug)
 				SEVERITY 	note;
 			ASSERT q_in = -1
 				REPORT "INCORRECT INITIAL VALUE, SHOULD BE -1"
 				SEVERITY	error;
 			
 			
-			FOR i IN 0 TO 9 LOOP
+			FOR i IN 0 TO 9 LOOP	--Count up until 9, report what is being tested (for debug)
 				WAIT FOR clk_period;
 				ASSERT 1 = 0
 					REPORT "TESTING OUTPUT = " &integer'image(i)
@@ -78,7 +77,7 @@ DUT	:	UP_DOWN_COUNTER PORT MAP(
 			
 			up_stim <= '0';
 			
-			FOR i IN 0 TO 8 LOOP
+			FOR i IN 0 TO 8 LOOP	--Count down until -1, report what is being tested (for debug) 
 				WAIT FOR clk_period;
 				ASSERT 1 = 0
 					REPORT "TESTING OUTPUT = " &integer'image(8 - i)
@@ -88,6 +87,7 @@ DUT	:	UP_DOWN_COUNTER PORT MAP(
 					SEVERITY	error;
 			END LOOP;
 			
+		--Report testing complete
 		ASSERT 1 = 0
 			REPORT "TEST COMPLETE"
 			SEVERITY	note;

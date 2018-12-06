@@ -1,12 +1,14 @@
+-- Bram Kuijk
+-- EE7
+-- DSD
+-- Fontys Engineering Eindhoven
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.std_logic_arith.all;
 USE ieee.STD_LOGIC_UNSIGNED.all;
 
-
---///////////////////////////////////////////////////////////
 --////////////////////ENTITY DECLARATION////////////////////
---/////////////////////////////////////////////////////////
 ENTITY UDC_BCD27SEG_TB IS
 END UDC_BCD27SEG_TB;
 
@@ -35,7 +37,7 @@ ARCHITECTURE BENCH OF UDC_BCD27SEG_TB IS
 		);
 	END COMPONENT;
 	
-	--Read from component
+	--Read signals from component output
 	SIGNAL SEG_A_IN	:	STD_LOGIC;
 	SIGNAL SEG_B_IN	:	STD_LOGIC;
 	SIGNAL SEG_C_IN	:	STD_LOGIC;
@@ -46,12 +48,12 @@ ARCHITECTURE BENCH OF UDC_BCD27SEG_TB IS
 	
 	SIGNAL SEG_COMB	:	STD_LOGIC_VECTOR(6 DOWNTO 0);	--Combined signal from component
 	
-	--Stimuli
+	--Stimuli to component input
 	SIGNAL	clk_stim	:	STD_LOGIC;
 	SIGNAL	nrst_stim	:	STD_LOGIC	:=	'0';
 	SIGNAL	up_stim		:	STD_LOGIC	:=	'0';
 	
-	--Internal signals
+	--Internal signals between components
 	SIGNAL	state_signal	:	INTEGER RANGE -1 TO 9;
 	
 	--Constants
@@ -59,11 +61,11 @@ ARCHITECTURE BENCH OF UDC_BCD27SEG_TB IS
 	
 	--Types
 	TYPE logic_vector_array IS ARRAY (-1 TO 9) OF STD_LOGIC_VECTOR(6 DOWNTO 0);	
-	SIGNAL assert_7seg	:	logic_vector_array;
+	SIGNAL assert_7seg	:	logic_vector_array;		--Array for storing expected values
 
-
-	BEGIN
-	assert_7seg(-1) <= "XXXXXXX";
+	BEGIN							--BEGIN architecture
+	
+	assert_7seg(-1) <= "XXXXXXX";	--Fill up array with expected values
 	assert_7seg(0) <= "1111110";
 	assert_7seg(1) <= "0110000";
 	assert_7seg(2) <= "1101101";
@@ -74,7 +76,8 @@ ARCHITECTURE BENCH OF UDC_BCD27SEG_TB IS
 	assert_7seg(7) <= "1110000";
 	assert_7seg(8) <= "1111111";
 	assert_7seg(9) <= "1111011";
-	SEG_COMB <= SEG_A_IN & 			--Concatonate all inputs to one signal. 
+	
+	SEG_COMB <= SEG_A_IN & 			--Concatonate segment inputs to  
 					SEG_B_IN & 
 					SEG_C_IN & 
 					SEG_D_IN & 
@@ -82,10 +85,8 @@ ARCHITECTURE BENCH OF UDC_BCD27SEG_TB IS
 					SEG_F_IN & 
 					SEG_G_IN;
 
---///////////////////////////////////////////////////////////
 --/////////////////////////PORT MAP/////////////////////////
---/////////////////////////////////////////////////////////
-u1	:	UP_DOWN_COUNTER PORT MAP(
+u1	:	UP_DOWN_COUNTER PORT MAP(		--Connections for UP_DOWN_COUNTER
 			clk		=>	clk_stim,
 			nrst	=>	nrst_stim,
 			up		=>	up_stim,
@@ -93,7 +94,7 @@ u1	:	UP_DOWN_COUNTER PORT MAP(
 			q		=>	state_signal
 			);
 			
-u2	:	BCD_2_7SEG_DECODER PORT MAP(
+u2	:	BCD_2_7SEG_DECODER PORT MAP(	--Connections for BCD_2_7SEG_DECODER
 			STATE	=> state_signal,
 			
 			SEG_A	=>	SEG_A_IN,
@@ -104,10 +105,8 @@ u2	:	BCD_2_7SEG_DECODER PORT MAP(
 			SEG_F	=>	SEG_F_IN,
 			SEG_G	=>	SEG_G_IN
 			);
-			
---///////////////////////////////////////////////////////////
+
 --////////////////////////////PROCESS///////////////////////
---/////////////////////////////////////////////////////////
 	PROCESS
 		BEGIN
 			clk_stim <= '1';
@@ -119,14 +118,14 @@ u2	:	BCD_2_7SEG_DECODER PORT MAP(
 	PROCESS
 		BEGIN
 		
-		up_stim <= '1';
-		nrst_stim <= '0';
+		up_stim <= '1';		--Count up
+		nrst_stim <= '0';	
 		WAIT FOR (clk_period/2);		--15ns
-		nrst_stim <= '1';
+		nrst_stim <= '1';	
 		
 		WAIT FOR (clk_period / 2);		--30ns
 		
-		FOR i IN 0 TO 9 LOOP
+		FOR i IN 0 TO 9 LOOP	--Count up until overflow
 			WAIT FOR clk_period;
 			ASSERT SEG_COMB = assert_7seg(i)
 				REPORT	"WRONG OUTPUT. COUNT UP 1. i = "	&integer'image(i)
@@ -137,11 +136,11 @@ u2	:	BCD_2_7SEG_DECODER PORT MAP(
 		
 		WAIT FOR clk_period;		--360ns
 		
-		ASSERT SEG_COMB = assert_7seg(-1)
+		ASSERT SEG_COMB = assert_7seg(-1)	--When number is out of range, return to -1. Check output
 			REPORT "WRONG OUTPUT. i = -1"
 			SEVERITY	error;
 		
-		FOR i IN 0 TO 9 LOOP
+		FOR i IN 0 TO 9 LOOP		--Count up until 9
 			WAIT FOR clk_period;
 			ASSERT SEG_COMB = assert_7seg(i)
 				REPORT	"WRONG OUTPUT. COUNT UP 2. i = "	&integer'image(i)
@@ -152,7 +151,7 @@ u2	:	BCD_2_7SEG_DECODER PORT MAP(
 		
 		up_stim <= '0';
 
-		FOR i IN 0 TO 8 LOOP
+		FOR i IN 0 TO 8 LOOP		--Count down from 9 to -1 
 			WAIT FOR clk_period;
 			ASSERT SEG_COMB = assert_7seg(8 - i)
 				REPORT "WRONG OUTPUT. COUNT DOWN. i = "	&integer'image(8 - i)
@@ -163,7 +162,7 @@ u2	:	BCD_2_7SEG_DECODER PORT MAP(
 		
 		WAIT FOR clk_period;		--960ns
 		
-		ASSERT SEG_COMB = assert_7seg(-1)
+		ASSERT SEG_COMB = assert_7seg(-1)	--When -1 check output
 			REPORT	"WRONG OUTPUT. i = -1"
 			SEVERITY	error;
 	
