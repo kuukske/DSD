@@ -1,0 +1,85 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 280 248)
+	(text "Mode_Reg_S" (rect 8 0 72 12)(font "Arial" ))
+	(text "inst" (rect 16 168 33 180)(font "Arial" ))
+	(port
+		(pt 112 0)
+		(input)
+		(text "Clk" (rect 8 0 24 12)(font "Arial" ))
+		(text "Clk" (rect 104 25 116 41)(font "Arial" )(vertical))
+		(line (pt 112 0)(pt 112 17))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "d_bus[7..0]" (rect 0 8 55 20)(font "Arial" ))
+		(text "d_bus[7..0]" (rect 21 91 76 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 216 40)
+		(input)
+		(text "ldm" (rect 16 8 33 20)(font "Arial" ))
+		(text "ldm" (rect 174 32 191 44)(font "Arial" ))
+		(line (pt 200 40)(pt 216 40))
+	)
+	(port
+		(pt 96 184)
+		(output)
+		(text "Baudrate[1..0]" (rect 8 40 77 52)(font "Arial" ))
+		(text "Baudrate[1..0]" (rect 88 91 100 160)(font "Arial" )(vertical))
+		(line (pt 96 184)(pt 96 168)(line_width 3))
+	)
+	(port
+		(pt 216 88)
+		(output)
+		(text "Char_len[1..0]" (rect 16 8 85 20)(font "Arial" ))
+		(text "Char_len[1..0]" (rect 137 83 206 95)(font "Arial" ))
+		(line (pt 216 88)(pt 200 88)(line_width 3))
+	)
+	(port
+		(pt 184 184)
+		(output)
+		(text "even_parity" (rect 8 40 67 52)(font "Arial" ))
+		(text "even_parity" (rect 176 101 188 160)(font "Arial" )(vertical))
+		(line (pt 184 184)(pt 184 168))
+	)
+	(port
+		(pt 216 56)
+		(output)
+		(text "parity_enab" (rect 16 8 73 20)(font "Arial" ))
+		(text "parity_enab" (rect 147 51 204 63)(font "Arial" ))
+		(line (pt 216 56)(pt 200 56))
+	)
+	(port
+		(pt 216 72)
+		(output)
+		(text "stopbits[1..0]" (rect 16 8 80 20)(font "Arial" ))
+		(text "stopbits[1..0]" (rect 141 67 205 79)(font "Arial" ))
+		(line (pt 216 72)(pt 200 72)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 168))
+	)
+)

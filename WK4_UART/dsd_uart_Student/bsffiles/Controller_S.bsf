@@ -1,0 +1,148 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 56 56 280 904)
+	(text "Controller_S" (rect 16 0 76 12)(font "Arial" ))
+	(text "inst" (rect 16 832 33 844)(font "Arial" ))
+	(port
+		(pt 0 168)
+		(input)
+		(text "Char_len[1..0]" (rect 0 8 69 20)(font "Arial" ))
+		(text "Char_len[1..0]" (rect 21 163 90 175)(font "Arial" ))
+		(line (pt 0 168)(pt 16 168)(line_width 3))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "Clk" (rect 0 8 16 20)(font "Arial" ))
+		(text "Clk" (rect 21 51 37 63)(font "Arial" ))
+		(line (pt 0 56)(pt 16 56))
+	)
+	(port
+		(pt 112 0)
+		(input)
+		(text "cnd" (rect 8 0 25 12)(font "Arial" ))
+		(text "cnd" (rect 104 24 116 41)(font "Arial" )(vertical))
+		(line (pt 112 0)(pt 112 16))
+	)
+	(port
+		(pt 80 848)
+		(input)
+		(text "dtr" (rect 8 40 20 52)(font "Arial" ))
+		(text "dtr" (rect 72 810 84 822)(font "Arial" )(vertical))
+		(line (pt 80 848)(pt 80 831))
+	)
+	(port
+		(pt 0 288)
+		(input)
+		(text "nRST" (rect 0 8 27 20)(font "Arial" ))
+		(text "nRST" (rect 21 283 48 295)(font "Arial" ))
+		(line (pt 0 288)(pt 16 288))
+	)
+	(port
+		(pt 0 368)
+		(input)
+		(text "next_bit" (rect 0 8 38 20)(font "Arial" ))
+		(text "next_bit" (rect 21 363 59 375)(font "Arial" ))
+		(line (pt 0 368)(pt 16 368))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "parity_enab" (rect 0 8 57 20)(font "Arial" ))
+		(text "parity_enab" (rect 21 131 78 143)(font "Arial" ))
+		(line (pt 0 136)(pt 16 136))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "stopbits[1..0]" (rect 0 8 64 20)(font "Arial" ))
+		(text "stopbits[1..0]" (rect 21 147 85 159)(font "Arial" ))
+		(line (pt 0 152)(pt 16 152)(line_width 3))
+	)
+	(port
+		(pt 88 0)
+		(input)
+		(text "wr" (rect 8 0 18 12)(font "Arial" ))
+		(text "wr" (rect 80 25 92 35)(font "Arial" )(vertical))
+		(line (pt 88 0)(pt 88 16))
+	)
+	(port
+		(pt 0 568)
+		(output)
+		(text "clear" (rect -8 8 15 20)(font "Arial" ))
+		(text "clear" (rect 24 560 47 572)(font "Arial" ))
+		(line (pt 16 568)(pt 0 568))
+	)
+	(port
+		(pt 120 848)
+		(output)
+		(text "ctso" (rect 8 40 29 52)(font "Arial" ))
+		(text "ctso" (rect 112 803 124 824)(font "Arial" )(vertical))
+		(line (pt 120 848)(pt 120 833))
+	)
+	(port
+		(pt 0 120)
+		(output)
+		(text "ldm" (rect 0 8 17 20)(font "Arial" ))
+		(text "ldm" (rect 24 112 41 124)(font "Arial" ))
+		(line (pt 16 120)(pt 0 120))
+	)
+	(port
+		(pt 0 448)
+		(output)
+		(text "lds" (rect 0 8 14 20)(font "Arial" ))
+		(text "lds" (rect 24 440 38 452)(font "Arial" ))
+		(line (pt 16 448)(pt 0 448))
+	)
+	(port
+		(pt 136 0)
+		(output)
+		(text "ntxe" (rect 8 0 29 12)(font "Arial" ))
+		(text "ntxe" (rect 128 23 140 44)(font "Arial" )(vertical))
+		(line (pt 136 0)(pt 136 16))
+	)
+	(port
+		(pt 0 464)
+		(output)
+		(text "sample" (rect -8 8 27 20)(font "Arial" ))
+		(text "sample" (rect 24 456 59 468)(font "Arial" ))
+		(line (pt 16 464)(pt 0 464))
+	)
+	(port
+		(pt 0 776)
+		(output)
+		(text "sel0" (rect 0 8 20 20)(font "Arial" ))
+		(text "sel0" (rect 24 768 44 780)(font "Arial" ))
+		(line (pt 16 776)(pt 0 776))
+	)
+	(port
+		(pt 0 760)
+		(output)
+		(text "sel1" (rect 0 8 20 20)(font "Arial" ))
+		(text "sel1" (rect 24 752 44 764)(font "Arial" ))
+		(line (pt 16 760)(pt 0 760))
+	)
+	(drawing
+		(rectangle (rect 16 16 208 832))
+	)
+)

@@ -1,0 +1,169 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 248 600)
+	(text "Controller_R" (rect 5 0 66 12)(font "Arial" ))
+	(text "inst" (rect 16 520 33 532)(font "Arial" ))
+	(port
+		(pt 56 536)
+		(input)
+		(text "BusAck" (rect 0 -288 37 -276)(font "Arial" ))
+		(text "BusAck" (rect 48 473 60 510)(font "Arial" )(vertical))
+		(line (pt 56 536)(pt 56 520))
+	)
+	(port
+		(pt 0 296)
+		(input)
+		(text "ChrLen[1..0]" (rect 0 0 61 12)(font "Arial" ))
+		(text "ChrLen[1..0]" (rect 21 291 82 303)(font "Arial" ))
+		(line (pt 0 296)(pt 16 296)(line_width 3))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "Clk" (rect 0 0 16 12)(font "Arial" ))
+		(text "Clk" (rect 21 27 37 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 184)
+		(input)
+		(text "NxtBit" (rect 0 0 30 12)(font "Arial" ))
+		(text "NxtBit" (rect 21 179 51 191)(font "Arial" ))
+		(line (pt 0 184)(pt 16 184))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "ParBit" (rect 0 0 29 12)(font "Arial" ))
+		(text "ParBit" (rect 21 123 50 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 400)
+		(input)
+		(text "ParEnab" (rect 0 0 41 12)(font "Arial" ))
+		(text "ParEnab" (rect 21 395 62 407)(font "Arial" ))
+		(line (pt 0 400)(pt 16 400))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Ser_In" (rect 0 0 31 12)(font "Arial" ))
+		(text "Ser_In" (rect 21 59 52 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 72 536)
+		(input)
+		(text "SetMode" (rect 0 -288 42 -276)(font "Arial" ))
+		(text "SetMode" (rect 64 468 76 510)(font "Arial" )(vertical))
+		(line (pt 72 536)(pt 72 519))
+	)
+	(port
+		(pt 0 416)
+		(input)
+		(text "StopBits[1..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "StopBits[1..0]" (rect 21 411 88 423)(font "Arial" ))
+		(line (pt 0 416)(pt 16 416)(line_width 3))
+	)
+	(port
+		(pt 96 0)
+		(input)
+		(text "cts" (rect 0 0 15 12)(font "Arial" ))
+		(text "cts" (rect 88 25 100 40)(font "Arial" )(vertical))
+		(line (pt 96 0)(pt 96 16))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "nRST" (rect 0 0 27 12)(font "Arial" ))
+		(text "nRST" (rect 21 43 48 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 112 536)
+		(output)
+		(text "BusRq" (rect 0 -288 33 -276)(font "Arial" ))
+		(text "BusRq" (rect 104 479 116 512)(font "Arial" )(vertical))
+		(line (pt 112 536)(pt 112 520))
+	)
+	(port
+		(pt 0 200)
+		(output)
+		(text "ClrBrt" (rect 0 0 28 12)(font "Arial" ))
+		(text "ClrBrt" (rect 24 192 52 204)(font "Arial" ))
+		(line (pt 16 200)(pt 0 200))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "ClrPar" (rect 0 0 30 12)(font "Arial" ))
+		(text "ClrPar" (rect 24 104 54 116)(font "Arial" ))
+		(line (pt 16 112)(pt 0 112))
+	)
+	(port
+		(pt 0 472)
+		(output)
+		(text "EnOut" (rect 0 0 30 12)(font "Arial" ))
+		(text "EnOut" (rect 24 464 54 476)(font "Arial" ))
+		(line (pt 16 472)(pt 0 472))
+	)
+	(port
+		(pt 0 432)
+		(output)
+		(text "Ldm" (rect 0 0 21 12)(font "Arial" ))
+		(text "Ldm" (rect 24 424 45 436)(font "Arial" ))
+		(line (pt 16 432)(pt 0 432))
+	)
+	(port
+		(pt 0 280)
+		(output)
+		(text "Shsi" (rect 0 0 21 12)(font "Arial" ))
+		(text "Shsi" (rect 24 272 45 284)(font "Arial" ))
+		(line (pt 16 280)(pt 0 280))
+	)
+	(port
+		(pt 0 144)
+		(output)
+		(text "SplPar" (rect 0 0 31 12)(font "Arial" ))
+		(text "SplPar" (rect 24 136 55 148)(font "Arial" ))
+		(line (pt 16 144)(pt 0 144))
+	)
+	(port
+		(pt 128 0)
+		(output)
+		(text "dtro" (rect 0 0 18 12)(font "Arial" ))
+		(text "dtro" (rect 120 23 132 41)(font "Arial" )(vertical))
+		(line (pt 128 0)(pt 128 16))
+	)
+	(port
+		(pt 128 536)
+		(output)
+		(text "error" (rect 0 -288 22 -276)(font "Arial" ))
+		(text "error" (rect 120 490 132 512)(font "Arial" )(vertical))
+		(line (pt 128 536)(pt 128 520))
+	)
+	(drawing
+		(rectangle (rect 16 16 168 512))
+	)
+)

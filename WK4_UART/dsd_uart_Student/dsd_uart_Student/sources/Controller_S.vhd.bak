@@ -1,0 +1,43 @@
+--
+--
+-- Digital System Design Assignment UART
+--
+-- Module :Controller (Sender) 
+-- 
+-- Controller_S.vhd
+--          
+--	
+--
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity Controller_S is
+   port(	Char_len    : in     std_logic_vector (1 DOWNTO 0);
+			Clk         : in     std_logic;
+			cnd         : in     Std_Logic;
+			dtr         : in     Std_Logic;
+			nRST        : in     std_logic;
+			next_bit    : in     std_logic;
+			parity_enab : in     std_logic;
+			stopbits    : in     std_logic_vector (1 DOWNTO 0);
+			wr          : in     Std_Logic;
+			clear       : out    std_logic;
+			ctso        : out    Std_Logic;
+			ldm         : out    std_logic;
+			lds         : out    std_logic;
+			ntxe        : out    Std_Logic;
+			sample      : out    std_logic;
+			sel0        : out    std_logic;
+			sel1        : out    std_logic);
+
+-- Declarations
+
+end Controller_S ;
+
+architecture rtl of Controller_S is
+
+begin
+
+	
+end architecture rtl;

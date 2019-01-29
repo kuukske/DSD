@@ -1,0 +1,113 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ntxe",
+					"strict" : false
+				},
+				{
+					"name" : "BusRq",
+					"strict" : false
+				},
+				{
+					"name" : "error",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_rec[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_rec[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_rec[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_rec[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_rec[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_rec[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_rec[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_rec[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cnd",
+					"strict" : false
+				},
+				{
+					"name" : "Clk_sender",
+					"strict" : false
+				},
+				{
+					"name" : "nRST",
+					"strict" : false
+				},
+				{
+					"name" : "wr",
+					"strict" : false
+				},
+				{
+					"name" : "BusAck",
+					"strict" : false
+				},
+				{
+					"name" : "SetMode",
+					"strict" : false
+				},
+				{
+					"name" : "Clk_receiver",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_send[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_send[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_send[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_send[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_send[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_send[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_send[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbus_send[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,31 @@
+--
+--
+-- Digital System Design Assignment UART
+--
+-- Module : Baudrate Timer for Simulation (Sender) 
+-- 
+-- BaudrateTimer_S_Simulation.vhd
+--          
+--	
+-- 
+--Adapted for Simulation frequency 500 kHz.
+--
+library IEEE;
+use IEEE.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity BaudrateTimer_S_Simulation is
+   port(	Baudrate : in     std_logic_vector (1 downto 0);
+			Clk      : in     std_logic;
+			nRST     : in     std_logic;
+			next_bit : out    std_logic);
+end entity BaudrateTimer_S_Simulation;
+
+--
+architecture behavioral of BaudrateTimer_S_Simulation is
+	signal count : std_logic_vector(19 downto 0);
+begin
+
+
+end architecture behavioral;
+
