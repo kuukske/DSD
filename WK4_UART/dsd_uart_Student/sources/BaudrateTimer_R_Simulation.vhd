@@ -28,7 +28,7 @@ SIGNAL countVal	:	integer range 0 to 1666		:= 0;
 SIGNAL turnOver	:	integer range 0 to 833		:= 0;
 
 begin
-	PROCESS(Clk, ClrBrt, countVal)
+	PROCESS(Clk, ClrBrt,)
 		BEGIN
 		
 		IF rising_edge(Clk) THEN

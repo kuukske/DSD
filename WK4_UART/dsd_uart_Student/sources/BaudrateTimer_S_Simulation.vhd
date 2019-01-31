@@ -31,7 +31,7 @@ SIGNAL setPoint	:	integer range 0 to 1666		:= 0;
 SIGNAL countVal	:	integer range 0 to 1666		:= 0;
 
 begin
-	PROCESS(Clk, nRST, countVal)
+	PROCESS(Clk, nRST)
 		BEGIN
 			IF nRST = '1'  THEN
 				IF rising_edge(Clk) THEN
